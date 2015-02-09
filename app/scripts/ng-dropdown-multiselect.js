@@ -120,6 +120,7 @@
           	scope.options = scope.options.filter(function (option) { return option.id !== id; });
           	// Remove external event
           	if (scope.events.onItemRemove) { scope.events.onItemRemove(id); }
+          	event.stopPropagation();
           };
 
           scope.externalEvents = {
