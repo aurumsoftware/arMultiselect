@@ -54,11 +54,14 @@
           template += '<div class="menu-item-label" role="menuitem" tabindex="-1" ng-click="setSelectedItem(getPropertyForObject(option,settings.idProp))">{{getPropertyForObject(option, settings.displayProp)}}</div>';
 
           // Edit button
-          template += '<div class="menu-item-edit"><span ng-show="settings.enableEdit" class="glyphicon glyphicon-pencil icon-pencil" ng-click="showEdit($event)"></span></div></div>';
+          template += '<div class="menu-item-edit" ng-click="showEdit($event)"><span ng-show="settings.enableEdit" class="glyphicon glyphicon-pencil icon-pencil"></span></div></div>';
 
           // Edit placeholder
-          template += '<div class="edit-item" style="display:none"><div class="edit-item-input"><input ng-attr-id="getPropertyForObject(option,settings.idProp)" type="text" ng-value="getPropertyForObject(option, settings.displayProp)" ng-keyup="editingOption($event, getPropertyForObject(option,settings.idProp))" /></div>';
-          template += '<div class="edit-item-remove"><span class="glyphicon glyphicon-trash icon-trash" ng-click="removeOption($event, getPropertyForObject(option,settings.idProp))"</span></div></div>';
+          template += '<div class="edit-item" style="display:none">';
+          // Edit input
+          template += '<div class="edit-item-input"><input ng-attr-id="getPropertyForObject(option,settings.idProp)" type="text" ng-value="getPropertyForObject(option, settings.displayProp)" ng-keyup="editingOption($event, getPropertyForObject(option,settings.idProp))" /></div>';
+          // Edit remove
+          template += '<div class="edit-item-remove" ng-click="removeOption($event, getPropertyForObject(option,settings.idProp))"><span class="glyphicon glyphicon-trash icon-trash"</span></div></div>';
 
           template += '</li>';
           template += '<li class="divider" ng-show="settings.selectionLimit > 1 && !settings.noSeparators"></li>';
@@ -84,8 +87,8 @@
           };
 
           scope.showEdit = function (event) {
-          	$(event.currentTarget).parent().parent().hide();
-          	$(event.currentTarget).parent().parent().next().show();
+          	$(event.currentTarget).parent().hide();
+          	$(event.currentTarget).parent().next().show();
           };
 
           scope.editingOption = function (event, id) {
