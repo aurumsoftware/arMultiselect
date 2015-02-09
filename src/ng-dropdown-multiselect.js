@@ -20,7 +20,6 @@
         },
 
         template: function (element, attributes) {
-          var checkboxes = attributes.checkboxes ? true : false;
           var groups = attributes.groupBy ? true : false;
 
           var template =  '<div class="multiselect-parent btn-group dropdown-multiselect" ng-class="{active: open && !settings.alwaysOpened}">';
@@ -45,14 +44,13 @@
             template += '<li class="presentation" role="presentation" ng-repeat="option in options | filter: searchFilter">';
           }
 
+          // Menu row
           template += '<div class="menu-item">';
 
-          if (checkboxes) {
-            template += '<div class="checkbox"><label><input class="checkboxInput" type="checkbox" ng-click="checkboxClick(event, getPropertyForObject(option,settings.idProp))" ng-checked="isChecked(getPropertyForObject(option,settings.idProp))" /> {{getPropertyForObject(option, settings.displayProp)}}</label></div></div>';
-          } else {
-            template += '<div class="menu-item-status"><span class="glyphicon" data-ng-class="{\'glyphicon-ok icon-check\': isChecked(getPropertyForObject(option,settings.idProp)), \'glyphicon-remove icon-uncheck\': !isChecked(getPropertyForObject(option,settings.idProp))}"></span></div>';
-          }
+          // Status (check / uncheck)
+          template += '<div class="menu-item-status"><span class="glyphicon" data-ng-class="{\'glyphicon-ok icon-check\': isChecked(getPropertyForObject(option,settings.idProp)), \'glyphicon-remove icon-uncheck\': !isChecked(getPropertyForObject(option,settings.idProp))}"></span></div>';
 
+          // Label
           template += '<div class="menu-item-label" role="menuitem" tabindex="-1" ng-click="setSelectedItem(getPropertyForObject(option,settings.idProp))">{{getPropertyForObject(option, settings.displayProp)}}</div>';
 
           // Edit button

@@ -66,12 +66,6 @@ This package was forked from https://github.com/dotansimha/angularjs-dropdown-mu
               <td>The name of the property which you like to group by your options. See grouping example.</td>
           </tr>
           <tr>
-              <td><strong>checkboxes</strong>
-              </td>
-              <td>Boolean</td>
-              <td>Indicated if to show a normal dropdown with glyphicons or HTML checkboxes.</td>
-          </tr>
-          <tr>
               <td><strong>search-filter</strong>
               </td>
               <td>String</td>
