@@ -356,6 +356,7 @@
           	if (event.keyCode === 13) {
           		scope.events.onNewItemAdd(scope.newItem);
           		scope.newItem = '';
+          		event.preventDefault();
           	}
           };
 
