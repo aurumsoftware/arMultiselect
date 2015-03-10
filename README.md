@@ -1,3 +1,5 @@
+##Important: Please keep in mind that this is an ongoing project. :)
+
 #AngularJS Dropdown Multiselect
 
 This package was forked from https://github.com/semeano/ng-dropdown-multiselect and the only differences from the original are:
