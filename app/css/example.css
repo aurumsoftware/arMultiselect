@@ -4,8 +4,8 @@
 body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 10px;
-	background-color: rgba(#e6e9ed, 1);
-	color: rgba(#454a52, 1);
+	background-color:#fff;
+	color: #454a52;
 }
 
 .main {padding-top: 130px;}
@@ -13,15 +13,10 @@ body {
 p {line-height: 1.4em;}
 
 /***********************************************************/
-/* .Show / hide in mobile */
-/***********************************************************/
-.showMobile {display: block;}
-.hideMobile {display: none;}
-
-/***********************************************************/
 /* .wrapper */
 /***********************************************************/
 .wrapper {
+	max-width: 1000px;
 	position: relative;
 	padding: 0 15px;
 	margin: 0 auto;
@@ -33,7 +28,66 @@ p {line-height: 1.4em;}
 /* link style */
 /***********************************************************/
 a,
-.link {color: rgba(#da4453, 1);}
+.link {
+	color: #19C4BA;
+}
 
 a:hover,
 .link:hover {text-decoration: underline;}
+
+/*********************************************************************/
+/* .exampleHeader */
+/*********************************************************************/
+.exampleHeader {
+	padding: 50px 0;
+	margin-bottom: 50px;
+	color: #fff;
+	background-color: #1BC5BB;
+	box-shadow: 0 1px 2px rgba(0,0,0, 0.4);
+}
+
+
+.exampleHeader h1,
+.exampleHeader strong {
+	display: inline-block;
+	margin-right: 10px
+}
+
+.exampleHeader h1 {font-size: 3em;}
+.exampleHeader strong {font-weight: 100;}
+.exampleHeader span {font-style: italic;;}
+
+/*********************************************************************/
+/* .content */
+/*********************************************************************/
+.content {
+	margin-bottom: 50px;
+}
+
+.exampleFeedback {
+	padding: 20px;
+	border-radius: 3px;
+	font-size: 2em;
+	font-weight: 100;
+	background-color: #dedede;
+	box-shadow: 0 0 5px rgba(0,0,0, 0.3) inset;
+}
+
+.acButton {margin-bottom: 30px;}
+
+/*********************************************************************/
+/* .exampleFooter */
+/*********************************************************************/
+.exampleFooter p {
+	font-size: 1.4em;
+	text-align: center;
+}
+
+.exampleFooter p:first-child {margin-bottom: 10px;}
+
+.exampleFooter .fa-heart {
+	font-size: 1.5em;
+	color: red;
+	text-shadow: 1px 1px 0 rgba(0,0,0, 0.8);
+	cursor: default;
+}
