@@ -16,17 +16,20 @@
           events: '=',
           searchFilter: '=?',
           translationTexts: '=',
-          groupBy: '@'
+          groupBy: '@',
+          useFontAwesome:'='
         },
 
         template: function (element, attributes) {
           var groups = attributes.groupBy ? true : false;
+          var iconTag = attributes.useFontAwesome ? 'i' : 'span'
+          var iconClass = attributes.useFontAwesome ? 'fa' : 'glyphicon'
 
           var template =  '<div class="multiselect-parent btn-group dropdown-multiselect" ng-class="{active: open && !settings.alwaysOpened}">';
 	            template += '<button type="button" class="dropdown-toggle" ng-class="settings.buttonClasses" ng-click="toggleDropdown()">{{getButtonText()}}&nbsp;<i class="icon-down"></i></button>';
 	            template += '<ul class="dropdown-menu dropdown-menu-form" ng-style="{display: (settings.alwaysOpened || open) ? \'block\' : \'none\', height : settings.scrollable ? settings.scrollableHeight : \'auto\' }" style="overflow: scroll" >';
-	            template += '<li ng-hide="!settings.showCheckAll || settings.selectionLimit > 0"><a data-ng-click="selectAll()"><span class="glyphicon glyphicon-ok"></span>  <span class="intemText">{{texts.checkAll}}</span> </a>';
-	            template += '<li ng-show="settings.showUncheckAll"><a data-ng-click="deselectAll();"><span class="glyphicon glyphicon-remove"></span>   <span class="intemText">{{texts.uncheckAll}}</span> </a></li>';
+	            template += '<li ng-hide="!settings.showCheckAll || settings.selectionLimit > 0"><a data-ng-click="selectAll()"><'+iconTag+' class="'+iconClass+' '+iconClass+'-ok"></'+iconTag+'>  <span class="intemText">{{texts.checkAll}}</span> </a>';
+	            template += '<li ng-show="settings.showUncheckAll"><a data-ng-click="deselectAll();"><'+iconTag+' class="'+iconClass+' '+iconClass+'-remove"></'+iconTag+'>   <span class="intemText">{{texts.uncheckAll}}</span> </a></li>';
 	            template += '<li ng-hide="(!settings.showCheckAll || settings.selectionLimit > 0) && !settings.showUncheckAll || settings.noSeparators" class="divider"></li>';
 
 	            // Search
@@ -48,20 +51,21 @@
           template += '<div class="menu-item">';
 
           // Status (check / uncheck)
-          template += '<div class="menu-item-status"><span class="glyphicon" data-ng-class="{\'glyphicon-ok icon-check\': isChecked(getPropertyForObject(option,settings.idProp)), \'glyphicon-remove icon-uncheck\': !isChecked(getPropertyForObject(option,settings.idProp))}"></span></div>';
+          template += '<div class="menu-item-status"><'+iconTag+' class="'+iconClass+'" data-ng-class="{\''+iconClass+'-check icon-check\': isChecked(getPropertyForObject(option,settings.idProp)), \'icon-uncheck\': !isChecked(getPropertyForObject(option,settings.idProp))}"></'+iconTag+'></div>';
+          
 
           // Label
           template += '<div class="menu-item-label" role="menuitem" tabindex="-1" ng-click="setSelectedItem(getPropertyForObject(option,settings.idProp))">{{getPropertyForObject(option, settings.displayProp)}}</div>';
 
           // Edit button
-          template += '<div class="menu-item-edit" ng-click="showEdit($event)"><span ng-show="settings.enableEdit" class="glyphicon glyphicon-pencil icon-pencil"></span></div></div>';
+          template += '<div class="menu-item-edit" ng-click="showEdit($event)"><'+iconTag+' ng-show="settings.enableEdit" class="'+iconClass+' '+iconClass+'-pencil icon-pencil"></'+iconTag+'></div></div>';
 
           // Edit placeholder
           template += '<div class="edit-item" style="display:none">';
           // Edit input
           template += '<div class="edit-item-input"><input ng-attr-id="getPropertyForObject(option,settings.idProp)" type="text" ng-value="getPropertyForObject(option, settings.displayProp)" ng-keyup="editingOption($event, getPropertyForObject(option,settings.idProp))" /></div>';
           // Edit remove
-          template += '<div class="edit-item-remove" ng-click="removeOption($event, getPropertyForObject(option,settings.idProp))"><span class="glyphicon glyphicon-trash icon-trash"</span></div></div>';
+          template += '<div class="edit-item-remove" ng-click="removeOption($event, getPropertyForObject(option,settings.idProp))"><'+iconTag+' class="'+iconClass+' '+iconClass+'-trash icon-trash"</'+iconTag+'></div></div>';
 
           template += '</li>';
           template += '<li class="divider" ng-show="settings.selectionLimit > 1 && !settings.noSeparators"></li>';
@@ -157,8 +161,7 @@
               groupBy: attributes.groupBy || undefined,
               groupByTextProvider: null,
               smartButtonMaxItems: 0,
-              smartButtonTextConverter: angular.noop,
-
+              smartButtonTextConverter: angular.noop
           };
 
           scope.texts = {
