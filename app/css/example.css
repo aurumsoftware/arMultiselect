@@ -1,0 +1,39 @@
+/*********************************************************************/
+/* General */
+/*********************************************************************/
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 10px;
+	background-color: rgba(#e6e9ed, 1);
+	color: rgba(#454a52, 1);
+}
+
+.main {padding-top: 130px;}
+.content {margin-bottom: 30px;}
+p {line-height: 1.4em;}
+
+/***********************************************************/
+/* .Show / hide in mobile */
+/***********************************************************/
+.showMobile {display: block;}
+.hideMobile {display: none;}
+
+/***********************************************************/
+/* .wrapper */
+/***********************************************************/
+.wrapper {
+	position: relative;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.wrapper.mw500 {max-width: 500px;}
+
+/***********************************************************/
+/* link style */
+/***********************************************************/
+a,
+.link {color: rgba(#da4453, 1);}
+
+a:hover,
+.link:hover {text-decoration: underline;}
