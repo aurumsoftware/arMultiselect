@@ -28,12 +28,13 @@ p {line-height: 1.4em;}
 /* link style */
 /***********************************************************/
 a,
-.link {
-	color: #19C4BA;
-}
+.link {color: #19C4BA;}
 
 a:hover,
-.link:hover {text-decoration: underline;}
+.link:hover {
+	color: #19C4BA;
+	text-decoration: underline;
+}
 
 /*********************************************************************/
 /* .exampleHeader */
@@ -60,17 +61,15 @@ a:hover,
 /*********************************************************************/
 /* .content */
 /*********************************************************************/
-.content {
-	margin-bottom: 50px;
-}
+.content {margin-bottom: 50px;}
 
 .exampleFeedback {
 	padding: 20px;
 	border-radius: 3px;
 	font-size: 2em;
 	font-weight: 100;
-	background-color: #dedede;
-	box-shadow: 0 0 5px rgba(0,0,0, 0.3) inset;
+	background-color: rgba(0,0,0, 0.05);
+	box-shadow: 0 0 5px rgba(0,0,0, 0.2) inset;
 }
 
 .acButton {margin-bottom: 30px;}
@@ -91,3 +90,5 @@ a:hover,
 	text-shadow: 1px 1px 0 rgba(0,0,0, 0.8);
 	cursor: default;
 }
+
+.exampleFooter strong {font-weight: normal;}
