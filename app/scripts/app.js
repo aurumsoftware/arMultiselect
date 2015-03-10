@@ -2,12 +2,12 @@
 
 	'use strict';
 
-	var dependencies = ['ng-dropdown-multiselect'];
+	var dependencies = ['ac-dropdown-multiselect'];
 
-	angular.module('ngDropdownMultiselectDemo', dependencies)
+	angular.module('acDropdownMultiselectDemo', dependencies)
 
 		/* @ngInject */
-		.controller('ngDropdownMultiselectDemoCtrl', function ($scope) {
+		.controller('acDropdownMultiselectDemoCtrl', function ($scope) {
 
 			$scope.examplemodel = [];
 			$scope.$watch('examplemodel', function () { $scope.asd = $scope.examplemodel.id; },true);

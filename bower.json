@@ -1,8 +1,9 @@
 {
-  "name": "ng-dropdown-multiselect",
-  "version": "1.6.3",
+  "name": "ac-dropdown-multiselect",
+  "version": "1.0",
   "authors": [
-    "Pedro Semeano <semeano@gmail.com>"
+    "Gustavo Maestri <gustavo@aerochimps.com>",
+    "Idmar Ramos Junior <idmarjr@aerochimps.com>"
   ],
   "description": "AngularJS Dropdown Multiselect directive",
   "keywords": [
