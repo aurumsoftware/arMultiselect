@@ -65,7 +65,7 @@
           // Edit input
           template += '<div class="edit-item-input"><input ng-attr-id="getPropertyForObject(option,settings.idProp)" type="text" ng-value="getPropertyForObject(option, settings.displayProp)" ng-keyup="editingOption($event, getPropertyForObject(option,settings.idProp))" /></div>';
           // Edit remove
-          template += '<div class="edit-item-remove" ng-click="removeOption($event, getPropertyForObject(option,settings.idProp))"><'+iconTag+' class="'+iconClass+' '+iconClass+'-trash icon-trash"</'+iconTag+'></div></div>';
+          template += '<div class="edit-item-remove" ng-click="removeOption($event, getPropertyForObject(option,settings.idProp))"><'+iconTag+' class="'+iconClass+' '+iconClass+'-trash icon-trash"></'+iconTag+'></div></div>';
 
           template += '</li>';
           template += '<li class="divider" ng-show="settings.selectionLimit > 1 && !settings.noSeparators"></li>';

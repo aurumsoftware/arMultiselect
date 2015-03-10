@@ -1,97 +1,66 @@
 <!doctype html>
 <html class="no-js">
+<head>
+	<meta charset="utf-8"/>
+	<title>Aerochimps - We make apps fly!</title>
 
-  <head>
+	<!--[if lte IE 8]>
+	<script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+	<![endif]-->
 
-    <meta charset="utf-8">
+	<!-- Metas -->
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<meta name="author" content="Aerochimps" />
+	<meta name="rating" content="general" />
+	<meta name="dcterms.rights" content="Aerochimps" />
+	<meta name="Copyright" content="Aerochimps" />
+	<meta name="dcterms.dateCopyrighted" content="2015" />
+	<meta name="revisit-after" content="1 month" />
+	<link rel="canonical" href="http://aerochimps.com/" />
+	<meta name="google-site-verification" content="" />
 
-    <title></title>
+	<!-- Meta related to language -->
+	<meta name="description" content="" />
+	<meta name="keywords" content=""/>
 
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-
-    <!-- Don't forget to set your site up: http://google.com/webmasters -->
-		<meta name="google-site-verification" content="" />
-		
-		<!-- Who owns the content of this site? -->
-		<meta name="Copyright" content="" />
-		
-		<!--  Mobile Viewport
-		http://j.mp/mobileviewport & http://davidbcalhoun.com/2010/viewport-metatag
-		device-width : Occupy full width of the screen in its current orientation
-		initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
-		maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width (wrong for most sites)
-		-->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<!-- Use Iconifyer to generate all the favicons and touch icons you need: http://iconifier.net -->
-		<link rel="shortcut icon" href="favicon.ico" />
-
-		<!-- Vendor CSS -->
-    <!-- build:css(.tmp) styles/vendor.css -->
+	<!-- File links -->
+	<!-- CSS -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-    <!-- endbuild -->
+	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+	<link rel="stylesheet" href="styles/app.css">
 
-    <!-- Custom CSS -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/app.css">
-    <!-- endbuild -->
+	<!-- Icon Lins -->
+	<!-- Standart Favicon -->
+	<link rel="shortcut icon" type="image/png" href="img/favicon@2x.png"/>
 
-  </head>
-  <body ng-app="acDropdownMultiselectDemo" ng-cloak>
+	<!-- Facebook -->
+	<meta property="og:type" content="website"/>
+	<meta property="og:image" content="http://aerochimps.com/img/deviceIcons/aerochimps-facebook-icon.png"/>
 
-    <!--[if lte IE 9]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+	<!-- Meta related to language -->
+	<meta property="og:site_name" content="Aerochimps - We make apps fly!"/>
+	<meta property="og:title" content="Aerochimps - We make apps fly!"/>
+	<meta property="og:url" content=""/>
+	<meta property="og:description" content="E"/>
+</head>
 
-    <div ng-controller="acDropdownMultiselectDemoCtrl">
+<body ng-app="acDropdownMultiselectDemo" ng-cloak>
+	<div ng-controller="acDropdownMultiselectDemoCtrl">
+		<div ac-dropdown-multiselect="" options="exampledata" use-font-awesome="true" selected-model="examplemodel" extra-settings="examplesettings" events="exampleevents"></div>
+			{{exampledata}}
+			{{examplemodel}}
+			{{asd}}
+		</div><!-- End c-dropdown-multiselect -->
 
-    	<!-- Simple dropdown -->
-    	<!-- <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-			  <div class="panel panel-default">
-			    <div class="panel-heading" role="tab" id="headingOne">
-			      <h4 class="panel-title">
-			        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-			          Simple dropdown
-			        </a>
-			      </h4>
-			    </div>
-			    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-			      <div class="panel-body"> -->
-			        <div ac-dropdown-multiselect="" options="exampledata" use-font-awesome="true" selected-model="examplemodel" extra-settings="examplesettings" events="exampleevents"></div>
-			      <!-- </div>
-			    </div>
-			  </div>
-		  </div> -->
-{{exampledata}}
-{{examplemodel}}
-{{asd}}
-    </div>
+	<!-- Github ribbon -->
+	<a href="https://github.com/Aerochimps/ac-dropdown-multiselect"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
 
-    <!-- Github ribbon -->
-    <a href="https://github.com/semeano/angular-dropdown-multiselect"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
-
-
-    <!-- build:js(.) scripts/oldieshim.js -->
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.js"></script>
-    <![endif]-->
-    <!-- endbuild -->
-
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
-    <!-- endbower -->
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <!-- endbuild -->
-
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/ng-dropdown-multiselect.js"></script>
-    <script src="scripts/app.js"></script>
-    <!-- endbuild -->
-
-	</body>
+	<!-- Scripts! :) -->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/lodash/dist/lodash.compat.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="scripts/ng-dropdown-multiselect.js"></script>
+	<script src="scripts/app.js"></script>
+</body>
 </html>
