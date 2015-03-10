@@ -1,0 +1,25 @@
+/* If your'e using Bootstrap theme, please link this file to your <head> */
+
+.menu-item {display: table-row;}
+.menu-item div {padding: 5px;}
+.menu-item-status {display: table-cell;}
+
+.menu-item-label {
+	display: table-cell;
+	width: 100%;
+	outline: none;
+	cursor: pointer;
+}
+
+.menu-item-edit {display: table-cell;}
+.edit-item {display: table-row;}
+
+.edit-item-input {
+	display: table-cell;
+	padding-left: 5px;
+}
+
+.edit-item-remove {
+	display: table-cell;
+	padding: 5px;
+}

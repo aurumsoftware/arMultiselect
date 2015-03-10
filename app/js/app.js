@@ -1,14 +1,11 @@
 (function () {
 
 	'use strict';
-
 	var dependencies = ['ac-dropdown-multiselect'];
-
 	angular.module('acDropdownMultiselectDemo', dependencies)
 
 		/* @ngInject */
 		.controller('acDropdownMultiselectDemoCtrl', function ($scope) {
-
 			$scope.examplemodel = [];
 			$scope.$watch('examplemodel', function () { $scope.asd = $scope.examplemodel.id; },true);
 			$scope.exampledata = [
@@ -38,7 +35,5 @@
 				// 	// debugger;
 				// }
 			};
-
 		});
-
 })();
