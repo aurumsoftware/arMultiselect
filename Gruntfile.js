@@ -176,7 +176,7 @@ module.exports = function (grunt) {
     filerev: {
       dist: {
         src: [
-          '<%= yeoman.dist %>/scripts/{,*/}*.js',
+          '<%= yeoman.dist %>/scripts/ac-dropdown-multiselect.mim.js',
           '<%= yeoman.dist %>/{,*/}*.css',
           '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= yeoman.dist %>/fonts/{,*/}*.{eot,svg,ttf,woff}'
@@ -325,7 +325,7 @@ module.exports = function (grunt) {
       	expand: true,
         dot: true,
         cwd: '<%= yeoman.app %>/scripts',
-    		src: 'ng-dropdown-multiselect.js',
+    		src: 'ac-dropdown-multiselect.js',
         dest: 'src'
       },
       styles: {

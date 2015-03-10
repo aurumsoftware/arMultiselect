@@ -1,19 +1,14 @@
 #AngularJS Dropdown Multiselect
 
-This package was forked from https://github.com/dotansimha/angularjs-dropdown-multiselect and the only differences from the original are:
+This package was forked from https://github.com/semeano/ng-dropdown-multiselect and the only differences from the original are:
 
-- Option (enableNewItem) to show a field to add a new item to the collection, and the respective event call (onNewItemAdd);
-- Option (alwaysOpened) to leave the menu always opened;
-- When an item isn't selected, it shows a "cross" glyphicon;
-- 'active' class added to the main container so you know when the dropdown list is opened or not (only if you don't use the alwaysOpened setting);
-- Option (noSeparators) to do not show separators;
-- Added classes (icon-check and icon-uncheck) for the check and uncheck glyphicons, if you don't want to use bootstrap (only for the menu items);
-- Option (enableEditItem) to enable editing and remove of the items. Also added 2 new events: onItemRemove and onIteOption to enable inline editing and removing items. You can also use different icons, just use 'icon-pencil' for the edit button and 'icon-trash' for the delete button.
+- you can chose use font-awsome or glyphicon(default).
+
 
 
 ###Install
 
-    bower install ng-dropdown-multiselect --save
+    bower install ac-dropdown-multiselect --save
 
 
 <div>
@@ -70,6 +65,12 @@ This package was forked from https://github.com/dotansimha/angularjs-dropdown-mu
               </td>
               <td>String</td>
               <td>Uses for settings the search filter from outside the direcrtive.</td>
+          </tr>
+          <tr>
+              <td><strong>use-font-awesome</strong>
+              </td>
+              <td>String</td>
+              <td>Uses for settings font-awesome as icon library.</td>
           </tr>
       </tbody>
   </table>

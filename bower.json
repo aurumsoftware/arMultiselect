@@ -18,7 +18,7 @@
     "checkbox"
   ],
   "license": "MIT",
-  "main": "src/ng-dropdown-multiselect.js",
+  "main": "src/ac-dropdown-multiselect.js",
   "ignore": [
   	"app",
   	"dist",

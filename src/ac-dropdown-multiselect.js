@@ -1,10 +1,10 @@
 (function() {
 
-	'use strict';
+  'use strict';
 
-	angular.module('ac-dropdown-multiselect', [])
+  angular.module('ac-dropdown-multiselect', [])
 
-		.directive('acDropdownMultiselect', ['$filter', '$document', function ($filter, $document) {
+    .directive('acDropdownMultiselect', ['$filter', '$document', function ($filter, $document) {
 
       return {
         restrict: 'AE',
@@ -16,26 +16,29 @@
           events: '=',
           searchFilter: '=?',
           translationTexts: '=',
-          groupBy: '@'
+          groupBy: '@',
+          useFontAwesome:'='
         },
 
         template: function (element, attributes) {
           var groups = attributes.groupBy ? true : false;
+          var iconTag = attributes.useFontAwesome ? 'i' : 'span'
+          var iconClass = attributes.useFontAwesome ? 'fa' : 'glyphicon'
 
           var template =  '<div class="multiselect-parent btn-group dropdown-multiselect" ng-class="{active: open && !settings.alwaysOpened}">';
-	            template += '<button type="button" class="dropdown-toggle" ng-class="settings.buttonClasses" ng-click="toggleDropdown()">{{getButtonText()}}&nbsp;<i class="icon-down"></i></button>';
-	            template += '<ul class="dropdown-menu dropdown-menu-form" ng-style="{display: (settings.alwaysOpened || open) ? \'block\' : \'none\', height : settings.scrollable ? settings.scrollableHeight : \'auto\' }" style="overflow: scroll" >';
-	            template += '<li ng-hide="!settings.showCheckAll || settings.selectionLimit > 0"><a data-ng-click="selectAll()"><span class="glyphicon glyphicon-ok"></span>  {{texts.checkAll}}</a>';
-	            template += '<li ng-show="settings.showUncheckAll"><a data-ng-click="deselectAll();"><span class="glyphicon glyphicon-remove"></span>   {{texts.uncheckAll}}</a></li>';
-	            template += '<li ng-hide="(!settings.showCheckAll || settings.selectionLimit > 0) && !settings.showUncheckAll || settings.noSeparators" class="divider"></li>';
+              template += '<button type="button" class="dropdown-toggle" ng-class="settings.buttonClasses" ng-click="toggleDropdown()">{{getButtonText()}}&nbsp;<i class="icon-down"></i></button>';
+              template += '<ul class="dropdown-menu dropdown-menu-form" ng-style="{display: (settings.alwaysOpened || open) ? \'block\' : \'none\', height : settings.scrollable ? settings.scrollableHeight : \'auto\' }" style="overflow: scroll" >';
+              template += '<li ng-hide="!settings.showCheckAll || settings.selectionLimit > 0"><a data-ng-click="selectAll()"><'+iconTag+' class="'+iconClass+' '+iconClass+'-ok"></'+iconTag+'>  <span class="intemText">{{texts.checkAll}}</span> </a>';
+              template += '<li ng-show="settings.showUncheckAll"><a data-ng-click="deselectAll();"><'+iconTag+' class="'+iconClass+' '+iconClass+'-remove"></'+iconTag+'>   <span class="intemText">{{texts.uncheckAll}}</span> </a></li>';
+              template += '<li ng-hide="(!settings.showCheckAll || settings.selectionLimit > 0) && !settings.showUncheckAll || settings.noSeparators" class="divider"></li>';
 
-	            // Search
-	            template += '<li ng-show="settings.enableSearch"><div class="dropdown-header"><input type="text" class="form-control" style="width: 100%;" ng-model="searchFilter" placeholder="{{texts.searchPlaceholder}}" /></li>';
-	            template += '<li ng-show="settings.enableSearch && !settings.noSeparators" class="divider"></li>';
+              // Search
+              template += '<li ng-show="settings.enableSearch"><div class="dropdown-header"><input type="text" class="form-control" style="width: 100%;" ng-model="searchFilter" placeholder="{{texts.searchPlaceholder}}" /></li>';
+              template += '<li ng-show="settings.enableSearch && !settings.noSeparators" class="divider"></li>';
 
-	            // New item
-	            template += '<li ng-show="settings.enableNewItem"><div class="dropdown-header"><input type="text" class="form-control" style="width: 100%;" ng-model="newItem" placeholder="{{texts.newItemPlaceholder}}" ng-keydown="onNewItemAddKeyDown($event)" /></li>';
-	            template += '<li ng-show="settings.enableNewItem && !settings.noSeparators" class="divider"></li>';
+              // New item
+              template += '<li ng-show="settings.enableNewItem"><div class="dropdown-header"><input type="text" class="form-control" style="width: 100%;" ng-model="newItem" placeholder="{{texts.newItemPlaceholder}}" ng-keydown="onNewItemAddKeyDown($event)" /></li>';
+              template += '<li ng-show="settings.enableNewItem && !settings.noSeparators" class="divider"></li>';
 
           if (groups) {
             template += '<li ng-repeat-start="option in orderedItems | filter: searchFilter" ng-show="getPropertyForObject(option, settings.groupBy) !== getPropertyForObject(orderedItems[$index - 1], settings.groupBy)" role="presentation" class="dropdown-header">{{ getGroupTitle(getPropertyForObject(option, settings.groupBy)) }}</li>';
@@ -48,20 +51,21 @@
           template += '<div class="menu-item">';
 
           // Status (check / uncheck)
-          template += '<div class="menu-item-status"><span class="glyphicon" data-ng-class="{\'glyphicon-ok icon-check\': isChecked(getPropertyForObject(option,settings.idProp)), \'glyphicon-remove icon-uncheck\': !isChecked(getPropertyForObject(option,settings.idProp))}"></span></div>';
+          template += '<div class="menu-item-status"><'+iconTag+' class="'+iconClass+'" data-ng-class="{\''+iconClass+'-check icon-check\': isChecked(getPropertyForObject(option,settings.idProp)), \'icon-uncheck\': !isChecked(getPropertyForObject(option,settings.idProp))}"></'+iconTag+'></div>';
+          
 
           // Label
           template += '<div class="menu-item-label" role="menuitem" tabindex="-1" ng-click="setSelectedItem(getPropertyForObject(option,settings.idProp))">{{getPropertyForObject(option, settings.displayProp)}}</div>';
 
           // Edit button
-          template += '<div class="menu-item-edit" ng-click="showEdit($event)"><span ng-show="settings.enableEdit" class="glyphicon glyphicon-pencil icon-pencil"></span></div></div>';
+          template += '<div class="menu-item-edit" ng-click="showEdit($event)"><'+iconTag+' ng-show="settings.enableEdit" class="'+iconClass+' '+iconClass+'-pencil icon-pencil"></'+iconTag+'></div></div>';
 
           // Edit placeholder
           template += '<div class="edit-item" style="display:none">';
           // Edit input
           template += '<div class="edit-item-input"><input ng-attr-id="getPropertyForObject(option,settings.idProp)" type="text" ng-value="getPropertyForObject(option, settings.displayProp)" ng-keyup="editingOption($event, getPropertyForObject(option,settings.idProp))" /></div>';
           // Edit remove
-          template += '<div class="edit-item-remove" ng-click="removeOption($event, getPropertyForObject(option,settings.idProp))"><span class="glyphicon glyphicon-trash icon-trash"</span></div></div>';
+          template += '<div class="edit-item-remove" ng-click="removeOption($event, getPropertyForObject(option,settings.idProp))"><'+iconTag+' class="'+iconClass+' '+iconClass+'-trash icon-trash"></'+iconTag+'></div></div>';
 
           template += '</li>';
           template += '<li class="divider" ng-show="settings.selectionLimit > 1 && !settings.noSeparators"></li>';
@@ -87,40 +91,40 @@
           };
 
           scope.showEdit = function (event) {
-          	$(event.currentTarget).parent().hide();
-          	$(event.currentTarget).parent().next().show();
+            $(event.currentTarget).parent().hide();
+            $(event.currentTarget).parent().next().show();
           };
 
           scope.editingOption = function (event, id) {
-          	if (event.keyCode === 13 || event.keyCode === 27) {
-          		$(event.currentTarget).parent().parent().hide();
-          		$(event.currentTarget).parent().parent().prev().show();
-          		if (event.keyCode === 13) { scope.editOption(id, event.currentTarget.value); }
-          		event.stopPropagation();
-          	}
+            if (event.keyCode === 13 || event.keyCode === 27) {
+              $(event.currentTarget).parent().parent().hide();
+              $(event.currentTarget).parent().parent().prev().show();
+              if (event.keyCode === 13) { scope.editOption(id, event.currentTarget.value); }
+              event.stopPropagation();
+            }
           };
 
           scope.editOption = function (id, value) {
-          	_.forEach(scope.options, function (option) {
-          		if (option.id === id) { option.label = value; }
-          	});
-          	if (scope.events.onItemEdit) { scope.events.onItemEdit(id, value); }
+            _.forEach(scope.options, function (option) {
+              if (option.id === id) { option.label = value; }
+            });
+            if (scope.events.onItemEdit) { scope.events.onItemEdit(id, value); }
           };
 
           scope.removeOption = function (event, id) {
-          	$(event.currentTarget).parent().hide();
-          	// Remove from selected options
-          	if (scope.settings.selectionLimit === 1 && scope.selectedModel.id === id) {
-          		scope.selectedModel = {};
-          	}
-          	else if (scope.settings.selectionLimit > 1) {
-          		scope.selectedModel = scope.selectedModel.filter(function (option) { return option.id !== id; });
-          	}
-          	// Remove from options
-          	scope.options = scope.options.filter(function (option) { return option.id !== id; });
-          	// Remove external event
-          	if (scope.events.onItemRemove) { scope.events.onItemRemove(id); }
-          	event.stopPropagation();
+            $(event.currentTarget).parent().hide();
+            // Remove from selected options
+            if (scope.settings.selectionLimit === 1 && scope.selectedModel.id === id) {
+              scope.selectedModel = {};
+            }
+            else if (scope.settings.selectionLimit > 1) {
+              scope.selectedModel = scope.selectedModel.filter(function (option) { return option.id !== id; });
+            }
+            // Remove from options
+            scope.options = scope.options.filter(function (option) { return option.id !== id; });
+            // Remove external event
+            if (scope.events.onItemRemove) { scope.events.onItemRemove(id); }
+            event.stopPropagation();
           };
 
           scope.externalEvents = {
@@ -157,8 +161,7 @@
               groupBy: attributes.groupBy || undefined,
               groupByTextProvider: null,
               smartButtonMaxItems: 0,
-              smartButtonTextConverter: angular.noop,
-
+              smartButtonTextConverter: angular.noop
           };
 
           scope.texts = {
@@ -353,15 +356,15 @@
           };
 
           scope.onNewItemAddKeyDown = function (event) {
-          	if (event.keyCode === 13) {
-          		scope.events.onNewItemAdd(scope.newItem);
-          		scope.newItem = '';
-          		event.preventDefault();
-          	}
+            if (event.keyCode === 13) {
+              scope.events.onNewItemAdd(scope.newItem);
+              scope.newItem = '';
+              event.preventDefault();
+            }
           };
 
           scope.externalEvents.onInitDone();
         }
       };
-	}]);
+  }]);
 })();
