@@ -9,20 +9,20 @@
 .acButton .dropdown-toggle {
 	font-size: 1.4em;
 	padding: 10px;
-	border: 1px solid #000;
-	border-radius: 3px;
-	color: #fff;
+	border-style: solid;
+	border-width: 1px;
 	font-weight: 400;
 	text-transform: uppercase;
-	background-color: #454A52;
-}
-
-.acButton .active > button {
-	border-radius: 3px 3px 0 0;
+	/* fallback */
+	color: #fff;
+	background-color: rgba(0,0,0, 0.2);
 }
 
 .acButton:hover  button,
-.acButton .active button {background-color: #373b41;}
+.acButton .active button {
+	/* fallback */
+	background-color: rgba(0,0,0, 0.2);
+}
 
 /*********************************************************************/
 /* .dropdown-menu */
@@ -32,10 +32,11 @@
 	top: calc(100% - 1px);
 	left: 0;
 	min-width: 110px;
-	border: 1px solid #000;
-	border-radius: 0 0 3px;
-	background-color: #fff;
+	border-style: solid;
+	border-width: 1px;
 	z-index: 10;
+	/* fallback */
+	background-color: #fff;
 }
 
 .acButton .dropdown-menu li a {
@@ -50,7 +51,8 @@
 	padding: 10px;
 	font-size: 1.4em;
 	border: none;
-	border-bottom: 1px solid #000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
 }
 
 /*********************************************************************/
@@ -64,19 +66,22 @@
 
 .checkAll:hover,
 .uncheckAll:hover {
- 	background-color: #1BC5BB;
+	/* fallback */
 	color: #fff;
+	background-color: rgba(0,0,0, 0.2);
  }
 
 .checkAll:hover a,
 .uncheckAll:hover a {
+	/* fallback */
 	color: #fff;
 	text-decoration: none;
 }
 
-
-.checkAll {}
-.uncheckAll {border-bottom: 1px solid #000; }
+.uncheckAll {
+	border-bottom-style: solid;
+	border-bottom-width: 1px; 
+}
 
 /*********************************************************************/
 /* .menu-item */
@@ -87,8 +92,9 @@
 }
 
 .menu-item:hover {
-	background-color: #1BC5BB;
+	/* fallback */
 	color: #fff;
+	background-color: rgba(0,0,0, 0.2);
 }
 
 .menu-item .menu-item-status,
@@ -150,13 +156,15 @@
 
 .selectInfo {
 	padding: 10px 30px;
-	border-top: 1px solid #000;
+	border-top-style: solid;
+	border-top-width: 1px;
 }
 
 .selectInfo a,
 .selectInfo a:hover {
-	color: #454a52;
 	text-decoration: none;
+	/* fallback */
+	color: #000;
 }
 
 /*********************************************************************/
@@ -171,8 +179,7 @@
 	margin-left: 1px;
 }
 
-.acButtonGroup .acButton {float: left; margin-left: -1px;}
-.acButtonGroup .acButton .dropdown-toggle {border-radius: 0;}
-
-.acButtonGroup .acButton:first-child button {border-radius: 4px 0 0 4px;}
-.acButtonGroup .acButton:last-child button {border-radius: 0 4px 4px 0;}
+.acButtonGroup .acButton {
+	float: left;
+	margin-left: -1px;
+}
