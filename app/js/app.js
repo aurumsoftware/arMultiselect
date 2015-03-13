@@ -13,7 +13,7 @@
 				{id: 2, label: 'André'},
 				{id: 3, label: 'Felipe'},
 				{id: 4, label: 'Gustavo'},
-				{id: 5, label: 'Idmar Ramos'},
+				{id: 5, label: 'Idmar Ramos Junior'},
 				{id: 6, label: 'Marcela'}];
 			$scope.examplesettings = {
 				showCheckAll: false,
@@ -21,8 +21,8 @@
 				dynamicTitle: false,
 				smartButtonMaxItems: 3,
 				enableNewItem: false,
-				selectionLimit: 0,
-				enableEdit: true
+				selectionLimit: 5,
+				enableEdit: false
 			};
 
 			$scope.exampleevents = {

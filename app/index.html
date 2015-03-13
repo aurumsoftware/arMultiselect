@@ -80,9 +80,8 @@
 	<div class="content">
 		<div class="wrapper">
 
-			<div ng-controller="acDropdownMultiselectDemoCtrl">
+			<div ng-controller="acDropdownMultiselectDemoCtrl" class="theExample">
 				<div
-					class="acButton"
 					ac-dropdown-multiselect=""
 					options="exampledata"
 					selected-model="examplemodel"
@@ -96,7 +95,41 @@
 					{{examplemodel}}
 					{{asd}}
 				</div><!-- End .exampleFeedback -->
+			</div><!-- End ac-dropdown-multiselect -->
 
+			<div ng-controller="acDropdownMultiselectDemoCtrl" class="theExample">
+				<div class="acButtonGroup cf">
+					<div
+						ac-dropdown-multiselect=""
+						options="exampledata"
+						selected-model="examplemodel"
+						extra-settings="examplesettings"
+						events="exampleevents"
+						class="acButton"
+					></div>
+					<div
+						ac-dropdown-multiselect=""
+						options="exampledata"
+						selected-model="examplemodel"
+						extra-settings="examplesettings"
+						events="exampleevents"
+						class="acButton"
+					></div>
+					<div
+						ac-dropdown-multiselect=""
+						options="exampledata"
+						selected-model="examplemodel"
+						extra-settings="examplesettings"
+						events="exampleevents"
+						class="acButton"
+					></div>
+				</div><!-- End .acButtonGroup -->
+
+				<div class="exampleFeedback">
+					{{exampledata}}
+					{{examplemodel}}
+					{{asd}}
+				</div><!-- End .exampleFeedback -->
 			</div><!-- End ac-dropdown-multiselect -->
 
 		</div><!-- End .wrapper -->
