@@ -9,7 +9,6 @@ body {
 }
 
 .main {padding-top: 130px;}
-.content {margin-bottom: 30px;}
 p {line-height: 1.4em;}
 
 /***********************************************************/
@@ -34,6 +33,10 @@ a:hover,
 .link:hover {
 	color: #19C4BA;
 	text-decoration: underline;
+}
+
+.theExample > div {
+	margin-bottom: 50px;
 }
 
 /*********************************************************************/
@@ -71,8 +74,6 @@ a:hover,
 	background-color: rgba(0,0,0, 0.05);
 	box-shadow: 0 0 5px rgba(0,0,0, 0.2) inset;
 }
-
-.acButton {margin-bottom: 30px;}
 
 /*********************************************************************/
 /* .exampleFooter */

@@ -30,8 +30,8 @@
           var template =  '<div class="multiselect-parent btn-group dropdown-multiselect" ng-class="{active: open && !settings.alwaysOpened}">';
 	            template += '<button type="button" class="dropdown-toggle" ng-class="settings.buttonClasses" ng-click="toggleDropdown()">{{getButtonText()}}&nbsp;<i class="icon-down"></i></button>';
 	            template += '<ul class="dropdown-menu dropdown-menu-form" ng-style="{display: (settings.alwaysOpened || open) ? \'block\' : \'none\', height : settings.scrollable ? settings.scrollableHeight : \'auto\' }" style="overflow: scroll" >';
-	            template += '<li ng-hide="!settings.showCheckAll || settings.selectionLimit > 0"><a data-ng-click="selectAll()"><'+iconTag+' class="'+iconClass+' '+iconClass+'-ok"></'+iconTag+'>  <span class="intemText">{{texts.checkAll}}</span> </a>';
-	            template += '<li ng-show="settings.showUncheckAll"><a data-ng-click="deselectAll();"><'+iconTag+' class="'+iconClass+' '+iconClass+'-remove"></'+iconTag+'>   <span class="intemText">{{texts.uncheckAll}}</span> </a></li>';
+	            template += '<li class="checkAll" ng-hide="!settings.showCheckAll || settings.selectionLimit > 0"><a data-ng-click="selectAll()"><'+iconTag+' class="'+iconClass+' '+iconClass+'-check"></'+iconTag+'>  <span class="intemText">{{texts.checkAll}}</span> </a>';
+	            template += '<li class="uncheckAll" ng-show="settings.showUncheckAll"><a data-ng-click="deselectAll();"><'+iconTag+' class="'+iconClass+' '+iconClass+'-remove"></'+iconTag+'>   <span class="intemText">{{texts.uncheckAll}}</span> </a></li>';
 	            template += '<li ng-hide="(!settings.showCheckAll || settings.selectionLimit > 0) && !settings.showUncheckAll || settings.noSeparators" class="divider"></li>';
 
 	            // Search
@@ -57,7 +57,7 @@
           
 
           // Label
-          template += '<div class="menu-item-label" role="menuitem" tabindex="-1" ng-click="setSelectedItem(getPropertyForObject(option,settings.idProp))">{{getPropertyForObject(option, settings.displayProp)}}</div>';
+          template += '<div class="menu-item-label" role="menuitem" tabindex="-1" ng-click="setSelectedItem(getPropertyForObject(option,settings.idProp))" title="{{getPropertyForObject(option, settings.displayProp)}}" >{{getPropertyForObject(option, settings.displayProp)}}</div>';
 
           // Edit button
           template += '<div class="menu-item-edit" ng-click="showEdit($event)"><'+iconTag+' ng-show="settings.enableEdit" class="'+iconClass+' '+iconClass+'-pencil icon-pencil"></'+iconTag+'></div></div>';
@@ -71,7 +71,7 @@
 
           template += '</li>';
           template += '<li class="divider" ng-show="settings.selectionLimit > 1 && !settings.noSeparators"></li>';
-          template += '<li role="presentation" ng-show="settings.selectionLimit > 1"><a role="menuitem">{{selectedModel.length}} {{texts.selectionOf}} {{settings.selectionLimit}} {{texts.selectionCount}}</a></li>';
+          template += '<li class="selectInfo" role="presentation" ng-show="settings.selectionLimit > 1"><a role="menuitem">{{selectedModel.length}} {{texts.selectionOf}} {{settings.selectionLimit}} {{texts.selectionCount}}</a></li>';
           template += '</ul>';
           template += '</div>';
           

@@ -1,8 +1,185 @@
 /*********************************************************************/
-/* .multiselect-parent */
+/* .acButton */
 /*********************************************************************/
-.multiselect-parent {}
-/***********************************************************/
+.acButton {
+	position: relative;
+	display: inline-block;
+}
+
+.acButton .dropdown-toggle {
+	font-size: 1.4em;
+	padding: 10px;
+	border-style: solid;
+	border-width: 1px;
+	font-weight: 400;
+	text-transform: uppercase;
+	/* fallback */
+	color: #fff;
+	background-color: rgba(0,0,0, 0.2);
+}
+
+.acButton:hover  button,
+.acButton .active button {
+	/* fallback */
+	background-color: rgba(0,0,0, 0.2);
+}
+
+/*********************************************************************/
 /* .dropdown-menu */
-/***********************************************************/
-.dropdown-menu {}
+/*********************************************************************/
+.acButton .dropdown-menu {
+	position: absolute;
+	top: calc(100% - 1px);
+	left: 0;
+	min-width: 110px;
+	border-style: solid;
+	border-width: 1px;
+	z-index: 10;
+	/* fallback */
+	background-color: #fff;
+}
+
+.acButton .dropdown-menu li a {
+	display: block;
+	font-size: 1.4em;
+}
+
+/*********************************************************************/
+/* .dropdown-header */
+/*********************************************************************/
+.dropdown-header > input {
+	padding: 10px;
+	font-size: 1.4em;
+	border: none;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+
+/*********************************************************************/
+/* .checkAll / .uncheckAll */
+/*********************************************************************/
+.checkAll a,
+.uncheckAll a {
+	padding: 10px 5px;
+	cursor: pointer;
+}
+
+.checkAll:hover,
+.uncheckAll:hover {
+	/* fallback */
+	color: #fff;
+	background-color: rgba(0,0,0, 0.2);
+ }
+
+.checkAll:hover a,
+.uncheckAll:hover a {
+	/* fallback */
+	color: #fff;
+	text-decoration: none;
+}
+
+.uncheckAll {
+	border-bottom-style: solid;
+	border-bottom-width: 1px; 
+}
+
+/*********************************************************************/
+/* .menu-item */
+/*********************************************************************/
+.menu-item {
+	position: relative;
+	cursor: pointer;
+}
+
+.menu-item:hover {
+	/* fallback */
+	color: #fff;
+	background-color: rgba(0,0,0, 0.2);
+}
+
+.menu-item .menu-item-status,
+.menu-item .menu-item-edit {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	padding: 10px;
+}
+
+.menu-item .menu-item-status .fa,
+.menu-item .menu-item-edit .fa {font-size: 1.5em;}
+
+.menu-item .menu-item-status {left: 0;}
+.menu-item .menu-item-edit {right: 0;}
+
+.menu-item-label {
+	width: 160px;
+	padding: 10px 30px;
+	font-size: 1.4em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.menu-item .menu-item-edit {opacity: 0;}
+.menu-item:hover .menu-item-edit {opacity: 1;}
+
+/*********************************************************************/
+/* .edit-item */
+/*********************************************************************/
+.edit-item {position: relative;}
+.edit-item-input {padding: 5px;}
+
+.edit-item-input > input {
+	width: calc(100% - 30px);
+	margin-right: 30px;
+	font-size: 1.4em;
+	padding: 5px;
+}
+
+.edit-item-remove {
+	position: absolute;;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	padding: 8px 10px 10px 10px;
+}
+
+.edit-item-remove > .fa {
+	font-size: 2em;
+	cursor: pointer;
+}
+
+/*********************************************************************/
+/* .selectInfo */
+/*********************************************************************/
+.divider {display: none;}
+
+.selectInfo {
+	padding: 10px 30px;
+	border-top-style: solid;
+	border-top-width: 1px;
+}
+
+.selectInfo a,
+.selectInfo a:hover {
+	text-decoration: none;
+	/* fallback */
+	color: #000;
+}
+
+/*********************************************************************/
+/* .acButtonGroup */
+/*********************************************************************/
+.acButtonGroup:after {
+	display: block;
+	content: " ";
+	width: 100%;
+	height: 1px;
+	margin-top: -1px;
+	margin-left: 1px;
+}
+
+.acButtonGroup .acButton {
+	float: left;
+	margin-left: -1px;
+}

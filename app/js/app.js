@@ -9,17 +9,20 @@
 			$scope.examplemodel = [];
 			$scope.$watch('examplemodel', function () { $scope.asd = $scope.examplemodel.id; },true);
 			$scope.exampledata = [
-				{id: 1, label: 'David'},
-				{id: 2, label: 'Jhon'},
-				{id: 3, label: 'Danny'}];
+				{id: 1, label: 'Allan'},
+				{id: 2, label: 'André'},
+				{id: 3, label: 'Felipe'},
+				{id: 4, label: 'Gustavo'},
+				{id: 5, label: 'Idmar Ramos Junior'},
+				{id: 6, label: 'Marcela'}];
 			$scope.examplesettings = {
 				showCheckAll: false,
 				showUncheckAll: false,
-				dynamicTitle: true,
+				dynamicTitle: false,
 				smartButtonMaxItems: 3,
-				enableNewItem: true,
-				selectionLimit: 2,
-				enableEdit: true
+				enableNewItem: false,
+				selectionLimit: 5,
+				enableEdit: false
 			};
 
 			$scope.exampleevents = {
