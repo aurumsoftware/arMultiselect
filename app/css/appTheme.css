@@ -10,8 +10,8 @@
 
 .acButton .active > button {border-radius: 3px 3px 0 0;}
 
-.acButton:hover  button,
-.acButton .active button {background-color: #373b41;}
+.acButton:hover .dropdown-multiselect > button,
+.acButton .active > button {background-color: #373b41;}
 
 /*********************************************************************/
 /* .dropdown-menu */
