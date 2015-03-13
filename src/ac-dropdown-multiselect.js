@@ -17,13 +17,15 @@
           searchFilter: '=?',
           translationTexts: '=',
           groupBy: '@',
-          useFontAwesome:'='
+          useGlyphicon:'='
         },
 
         template: function (element, attributes) {
+          attributes.useGlyphicon = attributes.useGlyphicon ? true : false;
+
           var groups = attributes.groupBy ? true : false;
-          var iconTag = attributes.useFontAwesome ? 'i' : 'span'
-          var iconClass = attributes.useFontAwesome ? 'fa' : 'glyphicon'
+          var iconTag = attributes.useGlyphicon ? 'span' : 'i'
+          var iconClass = attributes.useGlyphicon ? 'glyphicon' : 'fa' 
 
           var template =  '<div class="multiselect-parent btn-group dropdown-multiselect" ng-class="{active: open && !settings.alwaysOpened}">';
               template += '<button type="button" class="dropdown-toggle" ng-class="settings.buttonClasses" ng-click="toggleDropdown()">{{getButtonText()}}&nbsp;<i class="icon-down"></i></button>';
