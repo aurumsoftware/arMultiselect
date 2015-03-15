@@ -6,10 +6,7 @@ This package was forked from https://github.com/semeano/ng-dropdown-multiselect 
 
 - you can chose use font-awsome or glyphicon(default).
 
-
-
 ###Install
-
     bower install ac-dropdown-multiselect --save
 
 
