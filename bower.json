@@ -1,6 +1,6 @@
 {
   "name": "ac-dropdown-multiselect",
-  "version": "1.6.5",
+  "version": "1.6.6",
   "authors": [
     "Gustavo Maestri <gustavo@aerochimps.com>",
     "Idmar Ramos Junior <idmarjr@aerochimps.com>"
@@ -18,7 +18,7 @@
     "checkbox"
   ],
   "license": "MIT",
-  "main": "src/ac-dropdown-multiselect.js",
+  "main": ["js/ac-dropdown-multiselect.js","css/app.css","css/appBootstrap.css","css/appTheme.css","css/example.css"],
   "ignore": [
   	"app",
   	"dist",
