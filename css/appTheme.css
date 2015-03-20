@@ -1,22 +1,22 @@
 /*********************************************************************/
 /* .acButton */
 /*********************************************************************/
-.acButton .dropdown-toggle {
+.acButton.acMultiselect .dropdown-toggle {
 	border-color: #000;
 	border-radius: 3px;
 	color: #fff;
 	background-color: #454A52;
 }
 
-.acButton .active > button {border-radius: 3px 3px 0 0;}
+.acButton.acMultiselect .active > button {border-radius: 3px 3px 0 0;}
 
-.acButton:hover .dropdown-multiselect > button,
-.acButton .active > button {background-color: #373b41;}
+.acButton.acMultiselect:hover .dropdown-toggle,
+.acButton.acMultiselect .active .dropdown-toggle {background-color: #373b41;}
 
 /*********************************************************************/
 /* .dropdown-menu */
 /*********************************************************************/
-.acButton .dropdown-menu {
+.acButton.acMultiselect .dropdown-menu {
 	border-color: #000;
 	border-radius: 0 0 3px;
 	background-color: #fff;
@@ -32,9 +32,9 @@
 /*********************************************************************/
 .checkAll:hover,
 .uncheckAll:hover {
- 	background-color: #1BC5BB;
+	background-color: #1BC5BB;
 	color: #fff;
- }
+}
 
 .checkAll:hover a,
 .uncheckAll:hover a {color: #fff;}

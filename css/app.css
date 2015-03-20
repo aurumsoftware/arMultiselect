@@ -1,12 +1,13 @@
 /*********************************************************************/
 /* .acButton */
 /*********************************************************************/
-.acButton {
+.acButton.acMultiselect {
 	position: relative;
 	display: inline-block;
+	cursor: pointer;
 }
 
-.acButton .dropdown-toggle {
+.acButton.acMultiselect .dropdown-toggle {
 	font-size: 1.4em;
 	padding: 10px;
 	border-style: solid;
@@ -18,8 +19,8 @@
 	background-color: rgba(0,0,0, 0.2);
 }
 
-.acButton:hover  button,
-.acButton .active button {
+.acButton.acMultiselect:hover .dropdown-toggle,
+.acButton.acMultiselect .active .dropdown-toggle {
 	/* fallback */
 	background-color: rgba(0,0,0, 0.2);
 }
@@ -27,7 +28,7 @@
 /*********************************************************************/
 /* .dropdown-menu */
 /*********************************************************************/
-.acButton .dropdown-menu {
+.acButton.acMultiselect .dropdown-menu {
 	position: absolute;
 	top: calc(100% - 1px);
 	left: 0;
@@ -40,7 +41,7 @@
 	background-color: #fff;
 }
 
-.acButton .dropdown-menu li a {
+.acButton.acMultiselect .dropdown-menu li a {
 	display: block;
 	font-size: 1.4em;
 }
@@ -48,7 +49,7 @@
 /*********************************************************************/
 /* .dropdown-header */
 /*********************************************************************/
-.dropdown-header > input {
+.acButton.acMultiselect .dropdown-header > input {
 	padding: 10px;
 	font-size: 1.4em;
 	border: none;
@@ -70,7 +71,7 @@
 	/* fallback */
 	color: #fff;
 	background-color: rgba(0,0,0, 0.2);
- }
+}
 
 .checkAll:hover a,
 .uncheckAll:hover a {
