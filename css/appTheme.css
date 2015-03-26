@@ -25,28 +25,28 @@
 /*********************************************************************/
 /* .dropdown-header */
 /*********************************************************************/
-.dropdown-header > input {border-bottom-color: #000;}
+.acDropdown .dropdown-header > input {border-bottom-color: #000;}
 
 /*********************************************************************/
 /* .checkAll / .uncheckAll */
 /*********************************************************************/
-.checkAll:hover,
-.uncheckAll:hover {
+.acDropdown .checkAll:hover,
+.acDropdown .uncheckAll:hover {
 	background-color: #1BC5BB;
 	color: #fff;
 }
 
-.checkAll:hover a,
-.uncheckAll:hover a {color: #fff;}
+.acDropdown .checkAll:hover a,
+.acDropdown .uncheckAll:hover a {color: #fff;}
 
 
-.checkAll {}
-.uncheckAll {border-bottom: 1px solid #000; }
+.acDropdown .checkAll {}
+.acDropdown .uncheckAll {border-bottom: 1px solid #000; }
 
 /*********************************************************************/
 /* .menu-item */
 /*********************************************************************/
-.menu-item:hover {
+.acDropdown .menu-item:hover {
 	background-color: #1BC5BB;
 	color: #fff;
 }
@@ -54,10 +54,10 @@
 /*********************************************************************/
 /* .selectInfo */
 /*********************************************************************/
-.selectInfo {border-top-color: #000;}
+.acDropdown .selectInfo {border-top-color: #000;}
 
-.selectInfo a,
-.selectInfo a:hover {color: #454a52;}
+.acDropdown .selectInfo a,
+.acDropdown .selectInfo a:hover {color: #454a52;}
 
 /*********************************************************************/
 /* .acButtonGroup */
