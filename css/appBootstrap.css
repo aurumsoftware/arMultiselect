@@ -23,3 +23,5 @@
 	display: table-cell;
 	padding: 5px;
 }
+
+.acButtonGroup .acButton {display: inline-block;}
