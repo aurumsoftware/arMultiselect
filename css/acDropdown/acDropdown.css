@@ -102,16 +102,15 @@
 .acDropdown .menu-item .menu-item-status,
 .acDropdown .menu-item .menu-item-edit {
 	position: absolute;
-	top: 0;
-	bottom: 0;
-	padding: 10px;
+	top: 10px;
+	bottom: 10px;
 }
+
+.acDropdown .menu-item .menu-item-status {left: 10px;}
+.acDropdown .menu-item .menu-item-edit {right: 10px;}
 
 .acDropdown .menu-item .menu-item-status .fa,
 .acDropdown .menu-item .menu-item-edit .fa {font-size: 1.5em;}
-
-.acDropdown .menu-item .menu-item-status {left: 0;}
-.acDropdown.menu-item .menu-item-edit {right: 0;}
 
 .acDropdown .menu-item-label {
 	width: 160px;
@@ -185,4 +184,3 @@
 	float: left;
 	margin-left: -1px;
 }
-
