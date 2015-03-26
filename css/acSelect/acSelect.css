@@ -1,0 +1,154 @@
+/*********************************************************************/
+/* .acSelect */
+/*********************************************************************/
+.acSelect .acButton {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #656D78;
+	border-radius: 3px;
+	text-align: left;
+	font-size: 1.4em;
+	/*falback*/
+	background-color: rgba(255,255,255, 1);
+}
+
+/***********************************************************/
+/* .dropdown-menu */
+/***********************************************************/
+.acSelect .dropdown-menu  {
+	position: relative;
+	top: -1px;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.acSelect .dropdown-menu li a {
+	display: block;
+	font-size: 1.4em;
+}
+
+/***********************************************************/
+/* .dropdown-header */
+/***********************************************************/
+.acSelect .dropdown-header > input {
+	padding: 10px;
+	font-size: 1.4em;
+	border: none;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+
+/***********************************************************/
+/* .checkAll / .uncheckAll */
+/***********************************************************/
+.acSelect .checkAll a,
+.acSelect .uncheckAll a {
+	padding: 10px 5px;
+	cursor: pointer;
+	color: #fff;
+}
+
+.acSelect .checkAll:hover,
+.acSelect .uncheckAll:hover {
+	/* fallback */
+	color: #fff;
+	background-color: rgba(0,0,0, 0.2);
+}
+
+.checkAll:hover a,
+.uncheckAll:hover a {
+	/* fallback */
+	color: #fff;
+	text-decoration: none;
+}
+
+.acSelect .uncheckAll {
+	border-bottom-style: solid;
+	border-bottom-width: 1px; 
+}
+
+/***********************************************************/
+/* .menu-item */
+/***********************************************************/
+.acSelect .menu-item {
+	position: relative;
+	cursor: pointer;
+}
+
+.acSelect .menu-item:hover {
+	/* fallback */
+	color: #fff;
+	background-color: rgba(0,0,0, 0.2);
+}
+
+.acSelect .menu-item .menu-item-status,
+.acSelect .menu-item .menu-item-edit {
+	position: absolute;
+	top: 10px;
+	bottom: 10px;
+}
+
+.acSelect .menu-item .menu-item-status .fa,
+.acSelect .menu-item .menu-item-edit .fa {font-size: 1.5em;}
+
+.acSelect .menu-item .menu-item-status {left: 10px;}
+.acSelect .menu-item .menu-item-edit {right: 10px;}
+
+.acSelect .menu-item-label {
+	width: 100%;
+	padding: 10px 30px;
+	font-size: 1.4em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.acSelect .menu-item .menu-item-edit {opacity: 0;}
+.acSelect .menu-item:hover .menu-item-edit {opacity: 1;}
+
+/***********************************************************/
+/* .edit-item */
+/***********************************************************/
+.acSelect .edit-item {position: relative;}
+.acSelect .edit-item-input {padding: 5px;}
+
+.acSelect .edit-item-input > input {
+	width: calc(100% - 30px);
+	margin-right: 30px;
+	font-size: 1.4em;
+	padding: 5px;
+}
+
+.acSelect .edit-item-remove {
+	position: absolute;;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	padding: 8px 10px 10px 10px;
+}
+
+.acSelect .edit-item-remove > .fa {
+	font-size: 2em;
+	cursor: pointer;
+}
+
+/***********************************************************/
+/* .selectInfo */
+/***********************************************************/
+.divider {display: none;}
+
+.selectInfo {
+	padding: 10px 30px;
+	border-top-style: solid;
+	border-top-width: 1px;
+}
+
+.acSelect .selectInfo a,
+.acSelect .selectInfo a:hover {
+	text-decoration: none;
+	/* fallback */
+	color: #000;
+}
