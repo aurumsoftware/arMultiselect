@@ -32,12 +32,12 @@
 	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
 
 	<!-- Stand alone Theme scructure and theme -->
-<!-- 	<link rel="stylesheet" href="css/app.css">
-	<link rel="stylesheet" href="css/appTheme.css"> -->
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/appTheme.css">
 
 	<!-- To use bootstrap, please unlink stand alone theme -->
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-	<link rel="stylesheet" href="css/appBootstrap.css">
+	<!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"> -->
+	<!-- <link rel="stylesheet" href="css/appBootstrap.css"> -->
 
 	<!-- styles used in our example. You dont need to lnk it :) -->
 	<link rel="stylesheet" href="css/example.css"> 
@@ -88,7 +88,7 @@
 					selected-model="examplemodel"
 					extra-settings="examplesettings"
 					events="exampleevents"
-					class="acButton acMultiselect"
+					class="acDropdown"
 				></div>
 
 				<div class="exampleFeedback">
@@ -106,7 +106,7 @@
 						selected-model="examplemodel"
 						extra-settings="examplesettings"
 						events="exampleevents"
-						class="acButton acMultiselect"
+						class="acDropdown"
 					></div>
 					<div
 						ac-dropdown-multiselect=""
@@ -114,7 +114,7 @@
 						selected-model="examplemodel"
 						extra-settings="examplesettings"
 						events="exampleevents"
-						class="acButton acMultiselect"
+						class="acDropdown"
 					></div>
 					<div
 						ac-dropdown-multiselect=""
@@ -122,9 +122,26 @@
 						selected-model="examplemodel"
 						extra-settings="examplesettings"
 						events="exampleevents"
-						class="acButton acMultiselect"
+						class="acDropdown"
 					></div>
 				</div><!-- End .acButtonGroup -->
+
+				<div class="exampleFeedback">
+					{{exampledata}}
+					{{examplemodel}}
+					{{asd}}
+				</div><!-- End .exampleFeedback -->
+			</div><!-- End ac-dropdown-multiselect -->
+
+			<div ng-controller="acDropdownMultiselectDemoCtrl" class="theExample">
+				<div
+					ac-dropdown-multiselect=""
+					options="exampledata"
+					selected-model="examplemodel"
+					extra-settings="examplesettings"
+					events="exampleevents"
+					class="acSelect"
+				></div>
 
 				<div class="exampleFeedback">
 					{{exampledata}}

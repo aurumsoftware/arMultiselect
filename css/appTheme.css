@@ -1,22 +1,22 @@
 /*********************************************************************/
 /* .acButton */
 /*********************************************************************/
-.acButton.acMultiselect .dropdown-toggle {
+.acDropdown .dropdown-toggle {
 	border-color: #000;
 	border-radius: 3px;
 	color: #fff;
 	background-color: #454A52;
 }
 
-.acButton.acMultiselect .active > button {border-radius: 3px 3px 0 0;}
+.acDropdown .active > button {border-radius: 3px 3px 0 0;}
 
-.acButton.acMultiselect:hover .dropdown-toggle,
-.acButton.acMultiselect .active .dropdown-toggle {background-color: #373b41;}
+.acDropdown:hover .dropdown-toggle,
+.acDropdown .active .dropdown-toggle {background-color: #373b41;}
 
 /*********************************************************************/
 /* .dropdown-menu */
 /*********************************************************************/
-.acButton.acMultiselect .dropdown-menu {
+.acDropdown .dropdown-menu {
 	border-color: #000;
 	border-radius: 0 0 3px;
 	background-color: #fff;
