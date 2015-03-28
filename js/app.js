@@ -15,6 +15,7 @@
 				{id: 4, label: 'Gustavo'},
 				{id: 5, label: 'Idmar Ramos Junior'},
 				{id: 6, label: 'Marcela'}];
+
 			$scope.examplesettings = {
 				showCheckAll: false,
 				showUncheckAll: false,
