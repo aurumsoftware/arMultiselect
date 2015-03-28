@@ -6,7 +6,7 @@
 
 		/* @ngInject */
 		.controller('acDropdownMultiselectDemoCtrl', function ($scope) {
-			$scope.examplemodel = [];
+			$scope.examplemodel = {} ;
 			$scope.$watch('examplemodel', function () { $scope.asd = $scope.examplemodel.id; },true);
 			$scope.exampledata = [
 				{id: 1, label: 'Allan'},
@@ -21,8 +21,19 @@
 				dynamicTitle: false,
 				smartButtonMaxItems: 3,
 				enableNewItem: false,
-				selectionLimit: 5,
-				enableEdit: false
+				selectionLimit: 1,
+				enableEdit: false,
+			};
+
+			$scope.exampleCloseOnSelect = {
+				showCheckAll: false,
+				showUncheckAll: false,
+				dynamicTitle: false,
+				smartButtonMaxItems: 3,
+				enableNewItem: false,
+				selectionLimit: 1,
+				enableEdit: false,
+				closeOnSelect: true
 			};
 
 			$scope.exampleevents = {

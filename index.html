@@ -82,6 +82,7 @@
 		<div class="wrapper">
 
 			<div ng-controller="acDropdownMultiselectDemoCtrl" class="theExample">
+				<h2>Multiselect one button</h2>
 				<div
 					ac-dropdown-multiselect=""
 					options="exampledata"
@@ -99,6 +100,7 @@
 			</div><!-- End ac-dropdown-multiselect -->
 
 			<div ng-controller="acDropdownMultiselectDemoCtrl" class="theExample">
+				<h2>Multiselect with group button</h2>
 				<div class="acButtonGroup cf">
 					<div
 						ac-dropdown-multiselect=""
@@ -142,6 +144,26 @@
 					events="exampleevents"
 					class="acSelect"
 				></div>
+
+				<div class="exampleFeedback">
+					{{exampledata}}
+					{{examplemodel}}
+					{{asd}}
+				</div><!-- End .exampleFeedback -->
+			</div><!-- End ac-dropdown-multiselect -->
+
+			<div ng-controller="acDropdownMultiselectDemoCtrl" class="theExample">
+				<h2>Close on select (closeOnSelect: true on extra-settings Object)</h2>
+				<div >
+					<div
+						ac-dropdown-multiselect=""
+						options="exampledata"
+						selected-model="examplemodel"
+						extra-settings="exampleCloseOnSelect"
+						events="exampleevents"
+						class="acButton"
+					></div>
+				</div><!-- End .acButtonGroup -->
 
 				<div class="exampleFeedback">
 					{{exampledata}}
