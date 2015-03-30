@@ -239,11 +239,6 @@
               });
           }
 
-          if (scope.settings.closeOnSelect) {
-              $document.on('click', function (e) {
-                          scope.open = false;
-              });
-          }
 
           scope.getGroupTitle = function (groupValue) {
               if (scope.settings.groupByTextProvider !== null) {
