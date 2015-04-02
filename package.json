@@ -1,6 +1,6 @@
 {
   "name": "ac-dropdown-multiselect",
-  "version": "1.6.7",
+  "version": "1.6.7.1",
   "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.5",
