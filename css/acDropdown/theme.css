@@ -62,6 +62,6 @@
 /*********************************************************************/
 /* .acButtonGroup */
 /*********************************************************************/
-.acButtonGroup .acButton .acButton {border-radius: 0;}
-.acButtonGroup .acButton:first-child button {border-radius: 4px 0 0 4px;}
-.acButtonGroup .acButton:last-child button {border-radius: 0 4px 4px 0;}
+.acButtonGroup .acDropdown .acButton {border-radius: 0;}
+.acButtonGroup .acDropdown:first-child button {border-radius: 4px 0 0 4px;}
+.acButtonGroup .acDropdown:last-child button {border-radius: 0 4px 4px 0;}
