@@ -299,7 +299,6 @@
           scope.selectAll = function () {
               scope.deselectAll(false);
               scope.externalEvents.onSelectAll();
-
               angular.forEach(scope.options, function (value) {
                   scope.setSelectedItem(value[scope.settings.idProp], true);
               });
