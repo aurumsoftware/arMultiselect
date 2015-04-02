@@ -1,7 +1,7 @@
 /*********************************************************************/
 /* .acButton */
 /*********************************************************************/
-.acDropdown .dropdown-toggle {
+.acDropdown .acButton {
 	border-color: #000;
 	border-radius: 3px;
 	color: #fff;
@@ -10,8 +10,8 @@
 
 .acDropdown .active > button {border-radius: 3px 3px 0 0;}
 
-.acDropdown:hover .dropdown-toggle,
-.acDropdown .active .dropdown-toggle {background-color: #373b41;}
+.acDropdown:hover .acButton,
+.acDropdown .active .acButton {background-color: #373b41;}
 
 /*********************************************************************/
 /* .dropdown-menu */
@@ -62,6 +62,6 @@
 /*********************************************************************/
 /* .acButtonGroup */
 /*********************************************************************/
-.acButtonGroup .acButton .dropdown-toggle {border-radius: 0;}
+.acButtonGroup .acButton .acButton {border-radius: 0;}
 .acButtonGroup .acButton:first-child button {border-radius: 4px 0 0 4px;}
 .acButtonGroup .acButton:last-child button {border-radius: 0 4px 4px 0;}
