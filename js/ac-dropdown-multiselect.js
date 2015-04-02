@@ -28,7 +28,7 @@
           var iconClass = attributes.useGlyphicon ? 'glyphicon' : 'fa' 
 
           var template =  '<div class="multiselect-parent btn-group dropdown-multiselect" ng-class="{active: open && !settings.alwaysOpened}">';
-	            template += '<button type="button" class="dropdown-toggle acButton" ng-class="settings.buttonClasses" ng-click="toggleDropdown()">{{getButtonText()}}&nbsp;<i class="fa fa-caret-down"></i></button>';
+	            template += '<button type="button" class="dropdown-toggle acButton" ng-class="settings.buttonClasses" ng-click="toggleDropdown()"><span class="acButtonLabel">{{getButtonText()}}&nbsp;</span><i class="fa fa-caret-down"></i></button>';
 	            template += '<ul class="dropdown-menu dropdown-menu-form" ng-style="{display: (settings.alwaysOpened || open) ? \'block\' : \'none\', height : settings.scrollable ? settings.scrollableHeight : \'auto\' }" style="overflow: scroll" >';
 	            template += '<li class="checkAll" ng-hide="!settings.showCheckAll || settings.selectionLimit > 0"><a data-ng-click="selectAll()"><'+iconTag+' class="'+iconClass+' '+iconClass+'-check"></'+iconTag+'>  <span class="intemText">{{texts.checkAll}}</span> </a>';
 	            template += '<li class="uncheckAll" ng-show="settings.showUncheckAll"><a data-ng-click="deselectAll();"><'+iconTag+' class="'+iconClass+' '+iconClass+'-remove"></'+iconTag+'>   <span class="intemText">{{texts.uncheckAll}}</span> </a></li>';

@@ -7,7 +7,11 @@
 	cursor: pointer;
 }
 
+/***********************************************************/
+/* .acButton */
+/***********************************************************/
 .acDropdown .acButton {
+	position: relative;;
 	font-size: 1.4em;
 	padding: 10px;
 	border-style: solid;
@@ -17,6 +21,18 @@
 	/* fallback */
 	color: #fff;
 	background-color: rgba(0,0,0, 0.2);
+}
+
+.acButton .acButtonLabel {
+	display: inline-block;
+	padding-right: 10px;
+}
+
+.acButton .fa-caret-down {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	margin-top: -8px;
 }
 
 .acDropdown:hover .acButton,
@@ -36,6 +52,7 @@
 	list-style: none;
 	border-style: solid;
 	border-width: 1px;
+	list-style: none;
 	z-index: 10;
 	/* fallback */
 	background-color: #fff;
