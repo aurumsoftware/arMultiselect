@@ -38,14 +38,18 @@
 /* .dropdown-menu */
 /***********************************************************/
 .acSelect .dropdown-menu  {
-	position: relative;
-	top: -1px;
+	position: absolute;
 	display: block;
+	top: calc(100% - 1px);
+	left: 0;
 	width: 100%;
 	min-width: 200px;
 	border-style: solid;
 	border-width: 1px;
 	list-style: none;
+	z-index: 10;
+	/* fallback */
+	background-color: #fff;
 }
 
 .acSelect .dropdown-menu li a {
