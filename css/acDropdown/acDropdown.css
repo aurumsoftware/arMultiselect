@@ -26,6 +26,7 @@
 .acButton .acButtonLabel {
 	display: inline-block;
 	padding-right: 10px;
+	white-space: nowrap;
 }
 
 .acButton .fa-caret-down {
