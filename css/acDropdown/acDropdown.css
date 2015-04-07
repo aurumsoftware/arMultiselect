@@ -190,17 +190,10 @@
 /***********************************************************/
 /* .acButtonGroup */
 /***********************************************************/
-.acButtonGroup:after {
-	display: block;
-	content: " ";
-	width: 100%;
-	height: 1px;
-	margin-top: -1px;
-	margin-left: 1px;
-}
-
 .acButtonGroup .acDropdown {
-	display: inline-block;
+	display: block;
 	float: left;
 	margin-left: -1px;
 }
+
+.acButtonGroup .acDropdown:first-child {margin-left: 0;}

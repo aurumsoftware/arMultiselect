@@ -44,3 +44,10 @@
 /***********************************************************/
 .acSelect .selectInfo a,
 .acSelect .selectInfo a:hover {color: #000;}
+
+/*********************************************************************/
+/* .acButtonGroup */
+/*********************************************************************/
+.acButtonGroup .acSelect .acButton {border-radius: 0;}
+.acButtonGroup .acSelect:first-child button {border-radius: 4px 0 0 4px;}
+.acButtonGroup .acSelect:last-child button {border-radius: 0 4px 4px 0;}

@@ -180,3 +180,14 @@
 	/* fallback */
 	color: #000;
 }
+
+/***********************************************************/
+/* .acButtonGroup */
+/***********************************************************/
+.acButtonGroup .acSelect {
+	display: block;
+	float: left;
+	margin-left: -1px;
+}
+
+.acButtonGroup .acSelect:first-child {margin-left: 0;}

@@ -136,6 +136,42 @@
 			</div><!-- End ac-dropdown-multiselect -->
 
 			<div ng-controller="acDropdownMultiselectDemoCtrl" class="theExample">
+				<h2>Group button</h2>
+				<div class="acButtonGroup cf">
+					<div
+						ac-dropdown-multiselect=""
+						options="exampledata"
+						selected-model="examplemodel"
+						extra-settings="examplesettings"
+						events="exampleevents"
+						class="acSelect"
+					></div>
+					<div
+						ac-dropdown-multiselect=""
+						options="exampledata"
+						selected-model="examplemodel"
+						extra-settings="examplesettings"
+						events="exampleevents"
+						class="acSelect"
+					></div>
+					<div
+						ac-dropdown-multiselect=""
+						options="exampledata"
+						selected-model="examplemodel"
+						extra-settings="examplesettings"
+						events="exampleevents"
+						class="acSelect"
+					></div>
+				</div><!-- End .acButtonGroup -->
+
+				<div class="exampleFeedback">
+					{{exampledata}}
+					{{examplemodel}}
+					{{asd}}
+				</div><!-- End .exampleFeedback -->
+			</div><!-- End ac-dropdown-multiselect -->
+
+			<div ng-controller="acDropdownMultiselectDemoCtrl" class="theExample">
 				<div
 					ac-dropdown-multiselect=""
 					options="exampledata"
