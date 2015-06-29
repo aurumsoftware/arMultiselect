@@ -213,28 +213,34 @@
               }
           }
 
-          if (scope.settings.closeOnBlur) {
-              $document.on('click', function (e) {
-                  var target = e.target.parentElement;
-                  var parentFound = false;
+          var handleCloseOnBlur = function (e) {
+              var target = e.target.parentElement;
+              var parentFound = false;
 
-                  while (angular.isDefined(target) && target !== null && !parentFound) {
-                      if (_.contains(target.className.split(' '), 'multiselect-parent') && !parentFound) {
-                          if(target === dropdownTrigger) {
-                              parentFound = true;
-                          }
+              while (angular.isDefined(target) && target !== null && !parentFound) {
+                   if (_.contains(target.className.split(' '), 'multiselect-parent') && !parentFound) {
+                      if(target === dropdownTrigger) {
+                          parentFound = true;
                       }
-                      target = target.parentElement;
                   }
+                  target = target.parentElement;
+              }
 
-                  if (!parentFound) {
-                      scope.$apply(function () {
-                          scope.open = false;
-                      });
-                  }
-              });
+              if (!parentFound) {
+                  scope.$apply(function () {
+                      scope.open = false;
+                  });
+              }
+          };
+
+          if (scope.settings.closeOnBlur) {
+              $document.on('click', handleCloseOnBlur);
           }
-
+          scope.$on('$destroy', function() {
+            if (scope.settings.closeOnBlur) {
+              $document.off('click', handleCloseOnBlur);
+            }
+          });
 
           scope.getGroupTitle = function (groupValue) {
               if (scope.settings.groupByTextProvider !== null) {
