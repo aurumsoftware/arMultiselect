@@ -1,0 +1,53 @@
+/*********************************************************************/
+/* .acSelect */
+/*********************************************************************/
+.acSelect .acButton {background-color: rgba(255,255,255, 1);}
+.acSelect .active .acButton {border-radius: 3px 3px 0 0;}
+
+/***********************************************************/
+/* .dropdown-menu */
+/***********************************************************/
+.acSelect .dropdown-menu  {
+	border-color: #656D78;
+	border-radius: 0 0 3px 3px;
+	background-color: rgba(255,255,255, 1);
+}
+
+/***********************************************************/
+/* .checkAll / .uncheckAll */
+/***********************************************************/
+.acSelect .checkAll a,
+.acSelect .uncheckAll a {
+	background-color: #37CB9B;
+	color: #fff;
+}
+
+.acSelect .checkAll:hover,
+.acSelect .uncheckAll:hover {
+	color: #fff;
+	background-color: #37CB9B;
+}
+
+.checkAll:hover a,
+.uncheckAll:hover a {color: #fff;}
+
+/***********************************************************/
+/* .menu-item */
+/***********************************************************/
+.acSelect .menu-item:hover {
+	background-color: #37CB9B;
+	color: #fff;
+}
+
+/***********************************************************/
+/* .selectInfo */
+/***********************************************************/
+.acSelect .selectInfo a,
+.acSelect .selectInfo a:hover {color: #000;}
+
+/*********************************************************************/
+/* .acButtonGroup */
+/*********************************************************************/
+.acButtonGroup .acSelect .acButton {border-radius: 0;}
+.acButtonGroup .acSelect:first-child button {border-radius: 3px 0 0 3px;}
+.acButtonGroup .acSelect:last-child button {border-radius: 0 3px 3px 0;}
