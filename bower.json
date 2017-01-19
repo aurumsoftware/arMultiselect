@@ -1,5 +1,5 @@
 {
-	"name": "ac-dropdown-multiselect",
+	"name": "ar-dropdown-multiselect",
 	"version": "1.6.19",
 	"authors": [
 		"Gustavo Maestri <gustavo@aerochimps.com>",
@@ -20,7 +20,7 @@
 		"checkbox"
 	],
 	"license": "MIT",
-	"main": ["js/ac-dropdown-multiselect.js","css/acComponents.css","css/appBootstrap.css","css/acDropdown/acDropdown.css","css/acDropdown/theme.css","css/acSelect/acSelect.css","css/acSelect/theme.css"],
+	"main": ["js/ar-dropdown-multiselect.js","css/arComponents.css","css/appBootstrap.css","css/arDropdown/arDropdown.css","css/arDropdown/theme.css","css/arSelect/arSelect.css","css/arSelect/theme.css"],
 	"ignore": [
 		"app",
 		"dist",
