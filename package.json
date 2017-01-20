@@ -1,6 +1,6 @@
 {
 	"name": "ar-dropdown-multiselect",
-	"version": "1.6.19",
+	"version": "1.6.20",
 	"dependencies": {},
 	"devDependencies": {
 		"grunt": "^0.4.5",
