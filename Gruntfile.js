@@ -177,7 +177,7 @@ module.exports = function (grunt) {
       dist: {
         src: [
           '<%= yeoman.dist %>/scripts/ac-dropdown-multiselect.mim.js',
-          '<%= yeoman.dist %>/{,*/}*.css',
+          '<%= yeoman.dist %>/{,*/}ac-dropdown-multiselect.mim.css',
           '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= yeoman.dist %>/fonts/{,*/}*.{eot,svg,ttf,woff}'
         ]
@@ -206,7 +206,6 @@ module.exports = function (grunt) {
     // Performs rewrites based on filerev and the useminPrepare configuration
     usemin: {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
-      css: ['<%= yeoman.dist %>/{,*/}*.css'],
       options: {
         assetsDirs: ['<%= yeoman.dist %>','<%= yeoman.dist %>/images']
       }
@@ -216,27 +215,38 @@ module.exports = function (grunt) {
     // By default, your `index.html`'s <!-- Usemin block --> will take care of
     // minification. These next options are pre-configured if you do not wish
     // to use the Usemin blocks.
-    // cssmin: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/main.css': [
-    //         '.tmp/{,*/}*.css'
-    //       ]
-    //     }
-    //   }
-    // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/scripts/scripts.js': [
-    //         '<%= yeoman.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
+    cssmin: {
+      dist: {
+        files: {
+          'dist/ar-dropdown-multiselect-min.css': [
+            'css/arComponentes.css',
+            'css/*/*.css'
+          ]
+        }
+      }
+    },
+    uglify: {
+      dist: {
+        files: {
+          'dist/ar-dropdown-multiselect-min.js': [
+            'js/ar-dropdown-multiselect.js'
+          ]
+        }
+      }
+    },
+    concat: {
+      generated: {
+      files: [
+        {
+          dest: 'dist/ar-dropdown-multiselect.css',
+          src: [
+            'css/arComponentes.css',
+            'css/*/*.css'
+          ]
+        }
+      ]
+    }
+    },
 
     imagemin: {
       dist: {
@@ -284,9 +294,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '.tmp/concat/scripts',
-          src: ['*.js', '!oldieshim.js'],
-          dest: '.tmp/concat/scripts'
+          cwd: 'dist/concat/scripts',
+          src: 'js/ar-dropdown-multiselect.js',
+          dest: 'dist/ar-dropdown-multiselect.js'
         }]
       }
     },
@@ -383,7 +393,6 @@ module.exports = function (grunt) {
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
-    'autoprefixer',
     'concat',
     'ngAnnotate',
     'copy:dist',
