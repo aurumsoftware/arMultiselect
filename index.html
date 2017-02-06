@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
 	<meta charset="utf-8"/>
-	<title>ar-dropdown-multiselect: Aurum Software</title>
+	<title>aurum-multiselect: Aurum Software</title>
 
 	<!--[if lte IE 8]>
 	<script src="bower_components/html5shiv/dist/html5shiv.js"></script>
@@ -14,7 +14,7 @@
 	<meta name="rating" content="general" />
 	<meta name="dcterms.rights" content="Aurum" />
 	<meta name="Copyright" content="Aurum" />
-	<meta name="dcterms.dateCopyrighted" content="2015" />
+	<meta name="dcterms.dateCopyrighted" content="2017" />
 	<meta name="revisit-after" content="1 month" />
 	<link rel="canonical" href="http://aurum.com.br/" />
 	<meta name="google-site-verification" content="" />
@@ -28,23 +28,13 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,600,600italic,400italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="bower_components/acResetCSS/acReset.css">
-	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
-
-	<!-- Stand alone Theme scructure and theme 
-	<link rel="stylesheet" href="css/arComponents.css">
-	<link rel="stylesheet" href="css/arSelect/theme.css">
-	<link rel="stylesheet" href="css/arDropdown/appThemeHotelup.css">
-	 -->
-	 <link rel="stylesheet" href="dist/ar-dropdown-multiselect-min.css">
-	<!-- To use bootstrap, please unlink stand alone theme -->
-	<!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"> -->
-	<!-- <link rel="stylesheet" href="css/appBootstrap.css"> -->
+	<link rel="stylesheet" href="vendors/vendors.min.css">
+	<link rel="stylesheet" href="dist/aurum-multiselect.min.css">
 
 	<!-- styles used in our example. You dont need to lnk it :) -->
 	<link rel="stylesheet" href="css/example.css"> 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<!-- Icon Lins -->
 	<!-- Standart Favicon -->
 	<link rel="shortcut icon" type="image/png" href="http://www.aurum.com.br/wp-content/themes/aurum/favicon.png?v=2"/>
 
@@ -59,15 +49,17 @@
 	<meta property="og:description" content="E"/>
 </head>
 
-<body ng-app="arDropdownMultiselectDemo" ng-cloak>
+<body ng-app="aurumMultiselectDemo" ng-cloak>
 
 <section class="example">
 	<header class="exampleHeader">
 		<div class="wrapper">
-			<h1>
-				<strong>aurum</strong> 
-				<span>ac-dropdown-multiselect</span>
-			</h1>
+			<h1 class="multiselect">aurum<strong>-multiselect</strong></h1>
+			<h2 class="select">
+				<a href="https://github.com/aurumsoftware/aurum-select">
+					aurum<strong>-select</strong>
+				</a>
+			</h2>
 		</div><!-- End .wrapper -->
 		<!-- Github ribbon -->
 		<a href="https://github.com/aurumsoftware/arMultiselect">
@@ -83,111 +75,48 @@
 	<div class="content">
 		<div class="wrapper">
 
-			<div ng-controller="arDropdownMultiselectDemoCtrl" class="theExample">
-				<h2>One button</h2>
-				<div
-					ar-dropdown-multiselect=""
+			<div ng-controller="aurumMultiselectDemoCtrl" class="theExample">
+				<h2>Select with search</h2>
+
+				<aurum-multiselect
 					options="exampledata"
 					selected-model="examplemodel"
-					extra-settings="examplesettings"
 					events="exampleevents"
-					class="acDropdown"
-				></div>
-
+					search="Filter names..."
+					placeholder="Select a name"
+					class="arSelect"
+				></aurum-multiselect>
+					
+				<h3>Object</h3>
 				<div class="exampleFeedback">
 					{{exampledata}}
-					{{examplemodel}}
-					{{asd}}
 				</div><!-- End .exampleFeedback -->
-			</div><!-- End ar-dropdown-multiselect -->
 
-			<div ng-controller="arDropdownMultiselectDemoCtrl" class="theExample">
-				<h2>Group button</h2>
-				<div class="acButtonGroup cf">
-					<div
-						ar-dropdown-multiselect=""
-						options="exampledata"
-						selected-model="examplemodel"
-						extra-settings="examplesettings"
-						events="exampleevents"
-						class="acDropdown"
-					></div>
-					<div
-						ar-dropdown-multiselect=""
-						options="exampledata"
-						selected-model="examplemodel"
-						extra-settings="examplesettings"
-						events="exampleevents"
-						class="acDropdown"
-					></div>
-					<div
-						ar-dropdown-multiselect=""
-						options="exampledata"
-						selected-model="examplemodel"
-						extra-settings="examplesettings"
-						events="exampleevents"
-						class="acDropdown"
-					></div>
-				</div><!-- End .acButtonGroup -->
-
+				<h3>Selected items</h3>
 				<div class="exampleFeedback">
-					{{exampledata}}
 					{{examplemodel}}
-					{{asd}}
 				</div><!-- End .exampleFeedback -->
 			</div><!-- End ac-dropdown-multiselect -->
 
-			<div ng-controller="arDropdownMultiselectDemoCtrl" class="theExample">
-				<h2>Group button</h2>
-				<div class="acButtonGroup cf">
-					<div
-						ar-dropdown-multiselect=""
-						options="exampledata"
-						selected-model="examplemodel"
-						extra-settings="examplesettings"
-						events="exampleevents"
-						class="acSelect"
-					></div>
-					<div
-						ar-dropdown-multiselect=""
-						options="exampledata"
-						selected-model="examplemodel"
-						extra-settings="examplesettings"
-						events="exampleevents"
-						class="acSelect"
-					></div>
-					<div
-						ar-dropdown-multiselect=""
-						options="exampledata"
-						selected-model="examplemodel"
-						extra-settings="examplesettings"
-						events="exampleevents"
-						class="acSelect"
-					></div>
-				</div><!-- End .acButtonGroup -->
+			<div ng-controller="aurumMultiselectDemoCtrl" class="theExample">
+				<h2>Select without search</h2>
 
-				<div class="exampleFeedback">
-					{{exampledata}}
-					{{examplemodel}}
-					{{asd}}
-				</div><!-- End .exampleFeedback -->
-			</div><!-- End ac-dropdown-multiselect -->
-
-			<div ng-controller="arDropdownMultiselectDemoCtrl" class="theExample">
-				<div
-					ar-dropdown-multiselect=""
+				<aurum-multiselect
 					options="exampledata"
-					selected-model="examplesinglemodel"
-					extra-settings="exampleCloseOnSelect"
+					selected-model="examplemodel"
 					events="exampleevents"
-					class="acSelect"
-					ng-disabled="false"
-				></div>
-
+					placeholder="Select a name"
+					class="arSelect"
+				></aurum-multiselect>
+					
+				<h3>Object</h3>
 				<div class="exampleFeedback">
 					{{exampledata}}
+				</div><!-- End .exampleFeedback -->
+
+				<h3>Selected items</h3>
+				<div class="exampleFeedback">
 					{{examplemodel}}
-					{{asd}}
 				</div><!-- End .exampleFeedback -->
 			</div><!-- End ac-dropdown-multiselect -->
 
@@ -204,12 +133,8 @@
 </section><!-- End .example -->
 
 	<!-- Scripts! :) -->
-	<script src="bower_components/jquery/dist/jquery.js"></script>
-	<script src="bower_components/angular/angular.js"></script>
-	<script src="bower_components/lodash/dist/lodash.compat.js"></script>
-	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-
-	<script src="dist/ar-dropdown-multiselect-min.js"></script>
+	<script src="vendors/vendors.min.js"></script>
+	<script src="dist/aurum-multiselect.min.js"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>

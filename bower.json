@@ -1,26 +1,25 @@
 {
-	"name": "ar-dropdown-multiselect",
-	"version": "1.6.20",
+	"name": "aurum-multiselect",
+	"version": "1.0.0",
 	"authors": [
 		"Gustavo Maestri <gustavo@aerochimps.com>",
 		"Idmar Ramos Junior <idmarjr@aerochimps.com>",
 		"Felipe Borges <felipe@aerochimps.com>",
-		"Marcela Quint <marcela@aerochimps.com>"
+		"Marcela Quint <marcela@aerochimps.com>",
+		"Felipe Campos <felipe.campos@aurum.com.br>"
 	],
-	"description": "AngularJS Dropdown Multiselect directive",
+	"description": "AngularJS Multiselect directive",
 	"keywords": [
 		"angular",
 		"angularjs",
 		"directive",
 		"dropdown",
-		"multiselect",
-		"checklist",
+		"select",
 		"list",
-		"bootstrap",
-		"checkbox"
+		"bootstrap"
 	],
 	"license": "MIT",
-	"main": ["dist/ar-dropdown-multiselect-min.js","dist/ar-dropdown-multiselect-min.css"],
+	"main": ["dist/aurum-multiselect.min.js","dist/aurum-multiselect.min.css"],
 	"ignore": [
 		"app",
 		"dist",
@@ -34,7 +33,6 @@
 		"lodash": "2.4.1",
 		"jquery": "~2.1.3",
 		"bootstrap": "~3.3.2",
-		"acResetCSS": "",
-		"font-awesome": ""
+		"acResetCSS": ""
 	}
 }
