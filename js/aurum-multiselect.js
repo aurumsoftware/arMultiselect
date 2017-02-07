@@ -15,6 +15,7 @@
           events: '=',
           search: '@',
           placeholder: '@',
+          dynamicTitle: '@',
           ngDisabled: '='
         },
 
@@ -44,6 +45,12 @@
 
         link: function (scope, element, attributes) {
 
+          if ( attributes.dynamicTitle === 'true' ) {
+            scope.dynamicTitle = true;
+          } else {
+            scope.dynamicTitle = false;
+          }
+
           scope.externalEvents = {
             onItemSelect: angular.noop,
             onInitDone: angular.noop
@@ -53,7 +60,9 @@
             displayProp: 'label',
             idProp: 'id',
             externalIdProp: 'id',
-            buttonClasses: 'btn btn-default'
+            buttonClasses: 'btn btn-default',
+            dynamicTitle: scope.dynamicTitle,
+            smartButtonTextConverter: angular.noop
           };
 
           scope.texts = {
@@ -119,7 +128,27 @@
           });
 
           scope.getButtonText = function () {
-            return scope.texts.buttonDefaultText;
+            if (scope.settings.dynamicTitle && angular.isObject(scope.selectedModel) && (scope.selectedModel.length > 0 || _.keys(scope.selectedModel).length > 0)) {
+              var itemsText = [];
+
+              angular.forEach(scope.options, function (optionItem) {
+                if (scope.isChecked(scope.getPropertyForObject(optionItem, scope.settings.idProp))) {
+                  var displayText = scope.getPropertyForObject(optionItem, scope.settings.displayProp);
+                  var converterResponse = scope.settings.smartButtonTextConverter(displayText, optionItem);
+
+                  itemsText.push(converterResponse ? converterResponse : displayText);
+                }
+              });
+
+              if (scope.selectedModel.length > scope.settings.smartButtonMaxItems) {
+                itemsText = itemsText.slice(0, scope.settings.smartButtonMaxItems);
+                itemsText.push('...');
+              }
+
+              return itemsText.join(', ');
+            } else {
+              return scope.texts.buttonDefaultText;
+            }
           };
 
           scope.getPropertyForObject = function (object, property) {
