@@ -22,6 +22,7 @@ List of allowed attributes, you can find more information about them in the usag
 | **events**          | Object       | vents callbacks, more information below. |
 | **search**          | String       | Enable search filter on dropdown with placeholder name of field search. |
 | **placeholder**     | String       | Placeholder text of the button. |
+| **dynamic-title**   | Boolean      | `true` to eanble dynamic title (default false). |
 
 ##Settings
 
