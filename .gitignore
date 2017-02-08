@@ -4,5 +4,4 @@ bower_components
 .tmp
 .sass
 *.log
-dist/
 versions
