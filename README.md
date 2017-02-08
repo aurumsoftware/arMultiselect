@@ -15,7 +15,7 @@ This package was forked from https://github.com/semeano/ng-dropdown-multiselect 
 ##Example HTML
 
 ```
-&lt;aurum-multiselect
+<aurum-multiselect
 	options="exampledata"
 	selected-model="examplemodel"
 	events="exampleevents"
@@ -23,8 +23,8 @@ This package was forked from https://github.com/semeano/ng-dropdown-multiselect 
 	placeholder="Select a name"
 	dynamic-title="true"
 	label="label"
-	class="arSelect"&gt;
-&lt;/aurum-multiselect&gt;
+	class="arSelect">
+</aurum-multiselect>
 ```
 
 ##Attributes
