@@ -11,6 +11,22 @@ This package was forked from https://github.com/semeano/ng-dropdown-multiselect 
   bower install aurum-multiselect --save
 
 #Full API Documentation
+
+##Example HTML
+
+```
+&lt;aurum-multiselect
+	options="exampledata"
+	selected-model="examplemodel"
+	events="exampleevents"
+	search="Filter names..."
+	placeholder="Select a name"
+	dynamic-title="true"
+	label="label"
+	class="arSelect"&gt;
+&lt;/aurum-multiselect&gt;
+```
+
 ##Attributes
 
 List of allowed attributes, you can find more information about them in the usage examples above.
@@ -21,12 +37,16 @@ List of allowed attributes, you can find more information about them in the usag
 | **options**         | Object/Array | The options for the dropdown. |
 | **events**          | Object       | vents callbacks, more information below. |
 | **search**          | String       | Enable search filter on dropdown with placeholder name of field search. |
+| **label**     	  | String       | Label of object to display text item selected. |
 | **placeholder**     | String       | Placeholder text of the button. |
 | **dynamic-title**   | Boolean      | `true` to eanble dynamic title (default false). |
 
 ##Settings
 
-You dont need settings, only set `search` attribute to enable search filter and `placeholder` attribute to set button placeholder.
+* Set `search` attribute to enable search filter with string to text placeholder; 
+* Set `placeholder` attribute to set button placeholder;
+* Set `label` attribute to define propertie of object in selected items;
+* Set `dynamic-title` attribute `true` to enable dynamic title on select;
 
 ##Events
 

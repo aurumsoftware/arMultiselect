@@ -76,7 +76,7 @@
 		<div class="wrapper">
 
 			<div ng-controller="aurumMultiselectDemoCtrl" class="theExample">
-				<h2>Select with search</h2>
+				<h2>Select with search and dynamic title</h2>
 
 				<aurum-multiselect
 					options="exampledata"
@@ -85,6 +85,7 @@
 					search="Filter names..."
 					placeholder="Select a name"
 					dynamic-title="true"
+					label="label"
 					class="arSelect"
 				></aurum-multiselect>
 					
@@ -107,6 +108,7 @@
 					selected-model="examplemodel"
 					events="exampleevents"
 					placeholder="Select a name"
+					label="label"
 					class="arSelect"
 				></aurum-multiselect>
 					
@@ -135,7 +137,8 @@
 
 	<!-- Scripts! :) -->
 	<script src="vendors/vendors.min.js"></script>
-	<script src="dist/aurum-multiselect.min.js"></script>
+	<!-- <script src="dist/aurum-multiselect.min.js"></script> -->
+	<script src="js/aurum-multiselect.js"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>

@@ -13,6 +13,7 @@
           selectedModel: '=',
           options: '=',
           events: '=',
+          label: '@',
           search: '@',
           placeholder: '@',
           dynamicTitle: '@',
@@ -30,10 +31,10 @@
               template += '<li class="presentation" role="presentation" ng-repeat="option in options | filter: searchFilter">';
 
               // Menu row
-              template += '<div class="menu-item" data-ng-class="{\'selected\': isChecked(getPropertyForObject(option,settings.idProp)), \'not-selected\': !isChecked(getPropertyForObject(option,settings.idProp))}">';
+              template += '<div class="menu-item" data-ng-class="{\'selected\': isChecked(getPropertyForObject(option)), \'not-selected\': !isChecked(getPropertyForObject(option))}">';
               
               // Label
-              template += '<div class="menu-item-label" role="menuitem" tabindex="-1" ng-click="setSelectedItem(getPropertyForObject(option,settings.idProp))" title="{{getPropertyForObject(option, settings.displayProp)}}" >{{getPropertyForObject(option, settings.displayProp)}}</div>';
+              template += '<div class="menu-item-label" role="menuitem" tabindex="-1" ng-click="setSelectedItem(getPropertyForObject(option))" title="{{getPropertyForObject(option, settings.displayProp)}}" >{{getPropertyForObject(option, settings.displayProp)}}</div>';
 
               template += '</li>';
               template += '</ul>';
@@ -57,9 +58,7 @@
           };
 
           scope.settings = {
-            displayProp: 'label',
-            idProp: 'id',
-            externalIdProp: 'id',
+            displayProp: attributes.label,
             buttonClasses: 'btn btn-default',
             dynamicTitle: scope.dynamicTitle,
             smartButtonTextConverter: angular.noop
@@ -89,18 +88,6 @@
           angular.extend(scope.settings, scope.extraSettings || []);
           angular.extend(scope.externalEvents, scope.events || []);
           angular.extend(scope.texts, scope.translationTexts);
-
-          function getFindObj(id) {
-            var findObj = {};
-
-            if (scope.settings.externalIdProp === '') {
-              findObj[scope.settings.idProp] = id;
-            } else {
-              findObj[scope.settings.externalIdProp] = id;
-            }
-
-            return findObj;
-          }
 
           var handleCloseOnBlur = function (e) {
             var target = e.target.parentElement;
@@ -132,7 +119,7 @@
               var itemsText = [];
 
               angular.forEach(scope.options, function (optionItem) {
-                if (scope.isChecked(scope.getPropertyForObject(optionItem, scope.settings.idProp))) {
+                if (scope.isChecked(scope.getPropertyForObject(optionItem))) {
                   var displayText = scope.getPropertyForObject(optionItem, scope.settings.displayProp);
                   var converterResponse = scope.settings.smartButtonTextConverter(displayText, optionItem);
 
@@ -152,32 +139,26 @@
           };
 
           scope.getPropertyForObject = function (object, property) {
-            if (angular.isDefined(object) && object.hasOwnProperty(property)) {
-              return object[property];
+            if ( property ) {
+              if (angular.isDefined(object) && object.hasOwnProperty(property)) {
+                return object[property];
+              }
+              return '';
+            } else {
+              if (angular.isDefined(object)) {
+                return object;
+              }
+              return '';
             }
-
-            return '';
           };
 
-          scope.setSelectedItem = function (id, dontRemove) {
-            var findObj = getFindObj(id);
-            var finalObj = null;
-            finalObj = findObj;
-
-            dontRemove = dontRemove || false;
-
-            var exists = _.findIndex(scope.selectedModel, findObj) !== -1;
-
-            if (!dontRemove && exists) {
-              scope.selectedModel.splice(_.findIndex(scope.selectedModel, findObj), 1);
-            } else if (!exists) {
-              scope.selectedModel.push(finalObj);
-              scope.externalEvents.onItemSelect(finalObj);
-            }
+          scope.setSelectedItem = function (object) {
+            scope.selectedModel.push(object);
+            scope.externalEvents.onItemSelect(object);
           };
 
           scope.isChecked = function (id) {
-            return _.findIndex(scope.selectedModel, getFindObj(id)) !== -1;
+            return _.findIndex(scope.selectedModel, id) !== -1;
           };
 
           scope.externalEvents.onInitDone();
